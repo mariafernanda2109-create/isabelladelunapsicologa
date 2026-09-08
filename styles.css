@@ -549,7 +549,7 @@ body::after {
 
 .hero__titulo {
   font-family: var(--serif);
-  font-size: 4rem;
+  font-size: 3.6rem;
   line-height: 1.08;
   letter-spacing: -.018em;
   text-wrap: balance;
@@ -591,7 +591,7 @@ body::after {
   .hero {
     padding-block: calc(var(--altura-header) + 1.5rem) 2rem;
   }
-  .hero__titulo { font-size: 4rem; line-height: 1.12; }
+  .hero__titulo { font-size: 3.6rem; line-height: 1.12; }
   .hero__sub { margin-top: .875rem; }
   .hero__acao { margin-top: 1rem; }
 }
