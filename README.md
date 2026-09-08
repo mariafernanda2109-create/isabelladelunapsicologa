@@ -24,25 +24,22 @@ O bloco `CONFIG`, no topo de [`script.js`](script.js), guarda só o que monta li
 
 ```js
 const CONFIG = {
-  whatsapp: "5581993239438",   // DDI + DDD + número, só dígitos
+  whatsapp: "5581993239438",     // DDI + DDD + número, só dígitos
   mensagemPadrao: "Olá, Isabella! ...",
-  dataPolitica: ""            // ainda em aberto
+  dataPolitica: "2026-09-08"     // AAAA-MM-DD
 };
 ```
 
-### Antes de divulgar o endereço do site
+A `dataPolitica` é escrita em ISO e o site formata sozinho conforme o idioma:
+"8 de setembro de 2026" em português, "September 8, 2026" em inglês. Sempre que você
+revisar o texto da política, atualize essa data.
 
-Estes dois aparecem **na tela** para quem visitar e precisam ser resolvidos:
+### Ainda em aberto
 
-1. **`dataPolitica` está vazio** — a política mostra `[inserir data]` no lugar da data.
-   Preencha em `CONFIG`, em [`script.js`](script.js).
-2. **A política tem um aviso de rascunho visível** — o bloco `.aviso-editorial`, que
-   começa com "Antes de publicar:". Ele é um lembrete para você, não conteúdo do site.
-   Apague o bloco em [`politica-de-privacidade.html`](politica-de-privacidade.html)
-   depois de revisar o texto com apoio jurídico.
-
-Ainda em aberto, sem pressa:
-
+- **Revisão jurídica da política.** O texto de
+  [`politica-de-privacidade.html`](politica-de-privacidade.html) partiu de um modelo.
+  Confira cada item com apoio jurídico e ajuste conforme as ferramentas realmente usadas
+  no site (hospedagem, analytics, pixels). Ao revisar, atualize a `dataPolitica`.
 - **A política em inglês é informativa.** Ela cita a LGPD e o Código de Ética do CFP; a
   versão em português é a que vale juridicamente. Vale uma nota dizendo isso.
 - **`<meta property="og:image">`** aponta para o ícone; troque por uma imagem de

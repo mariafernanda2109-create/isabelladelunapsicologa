@@ -203,7 +203,6 @@ const I18N = {
     "pol.voltar": "<span class=\"seta\" aria-hidden=\"true\">←</span> Voltar ao site",
     "pol.titulo": "Política de Privacidade",
     "pol.atualizacao": "Última atualização:",
-    "pol.aviso": "<strong>Antes de publicar:</strong> este texto é um modelo de partida. Revise cada item com apoio jurídico e ajuste conforme as ferramentas realmente utilizadas no site (hospedagem, formulários, analytics, pixels). Substitua todos os campos marcados no arquivo <code>script.js</code>.",
     "pol.h1": "1. Quem é responsável pelos dados",
     "pol.p1": "Este site é mantido por Isabella de Luna, psicóloga, inscrita no CRP 02/29244. O contato para assuntos relacionados a dados pessoais é o e-mail <a href=\"mailto:existiremcor.psi@gmail.com\">existiremcor.psi@gmail.com</a>.",
     "pol.h2": "2. Quais dados são coletados",
@@ -412,7 +411,6 @@ const I18N = {
     "pol.voltar": "<span class=\"seta\" aria-hidden=\"true\">←</span> Back to the site",
     "pol.titulo": "Privacy Policy",
     "pol.atualizacao": "Last updated:",
-    "pol.aviso": "<strong>Before publishing:</strong> this text is a starting template. Review each item with legal support and adjust it to the tools the site actually uses (hosting, forms, analytics, pixels). Replace every marked field in the <code>script.js</code> file.",
     "pol.h1": "1. Who is responsible for your data",
     "pol.p1": "This site is maintained by Isabella de Luna, psychologist, registered under CRP 02/29244. For matters related to personal data, the contact is <a href=\"mailto:existiremcor.psi@gmail.com\">existiremcor.psi@gmail.com</a>.",
     "pol.h2": "2. What data is collected",
@@ -523,9 +521,13 @@ const I18N = {
       window.atualizarLinksWhatsApp(dic["wa.padrao"]);
     }
 
-    // data da política, quando ainda não preenchida no CONFIG
-    document.querySelectorAll('[data-cfg="dataPolitica"].pendente').forEach((el) => {
-      el.textContent = dic["pol.dataPendente"];
+    // a data da política é escrita por extenso no idioma ativo
+    document.querySelectorAll('[data-cfg="dataPolitica"]').forEach((el) => {
+      const formatada = typeof window.formatarDataPolitica === "function"
+        ? window.formatarDataPolitica(idioma)
+        : "";
+      el.textContent = formatada || dic["pol.dataPendente"];
+      el.classList.toggle("pendente", !formatada);
     });
 
     window.IDIOMA_ATUAL = idioma;
