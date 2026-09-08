@@ -1,0 +1,6 @@
+# Fica no GitHub (é o material de origem da marca), mas não vai para o site:
+# são os JPEGs grandes de onde os assets otimizados foram gerados.
+assets/originais/
+
+# Script que gera os assets — roda na sua máquina, não no site.
+gerar-assets.py

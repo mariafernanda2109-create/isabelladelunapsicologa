@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<!-- Idioma salvo, aplicado antes da primeira pintura: sem isso a página
+     piscaria em português para quem já escolheu inglês. O timeout é a
+     rede de segurança — se o i18n.js não carregar, o conteúdo aparece
+     em português em vez de a página ficar em branco. -->
+<script>
+(function () {
+  try {
+    if (localStorage.getItem("isabella-idioma") === "en") {
+      document.documentElement.lang = "en";
+      document.documentElement.setAttribute("data-i18n-pendente", "");
+      setTimeout(function () {
+        document.documentElement.removeAttribute("data-i18n-pendente");
+      }, 1200);
+    }
+  } catch (e) {}
+})();
+</script>
+<style>html[data-i18n-pendente] body { visibility: hidden; }</style>
+
+<title>Isabella de Luna | Psicóloga | Psicoterapia e Avaliação Psicológica</title>
+<meta name="description" content="Psicoterapia, psicoterapia breve e avaliação psicológica em Recife (PE) e online — em português e inglês — para o Brasil, para brasileiros no exterior e para estrangeiros.">
+<meta name="author" content="Isabella de Luna">
+<meta name="theme-color" content="#9E2027">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Isabella de Luna | Psicóloga">
+<meta property="og:description" content="Um espaço para dar forma ao que você sente. Psicoterapia e avaliação psicológica em Recife (PE) e online.">
+<meta property="og:image" content="assets/apple-touch-icon.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="assets/coracao-creme.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=4">
+
+<noscript><style>
+  /* Sem JavaScript: nada fica escondido. */
+  .reveal { opacity: 1 !important; transform: none !important; }
+  .acordeao__painel[hidden] { display: block; }
+  .acordeao__icone { display: none; }
+</style></noscript>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Psychologist",
+  "name": "Isabella de Luna — Psicóloga",
+  "description": "Psicoterapia, psicoterapia breve e avaliação psicológica. Atendimento presencial em Recife (PE) e online para todo o Brasil, para brasileiros residentes no exterior e para nativos falantes de inglês.",
+  "image": "assets/apple-touch-icon.png",
+  "telephone": "+55 81 99323-9438",
+  "email": "existiremcor.psi@gmail.com",
+  "sameAs": ["https://www.instagram.com/existiremcor.psi/"],
+  "knowsLanguage": ["pt-BR", "en"],
+  "address": {
+    "@type": "PostalAddress",
+    "name": "Edifício Ambassador",
+    "streetAddress": "Rua José de Alencar, 44A — Sala 53",
+    "addressLocality": "Recife",
+    "addressRegion": "PE",
+    "postalCode": "50070-030",
+    "addressCountry": "BR"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Isabella de Luna",
+    "jobTitle": "Psicóloga",
+    "identifier": "CRP 02/29244"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Recife" },
+    { "@type": "Country", "name": "Brasil" },
+    { "@type": "Place", "name": "Atendimento online para brasileiros residentes no exterior e para estrangeiros" }
+  ],
+  "availableService": [
+    { "@type": "Service", "name": "Psicoterapia" },
+    { "@type": "Service", "name": "Psicoterapia breve" },
+    { "@type": "Service", "name": "Avaliação psicológica" }
+  ]
+}
+</script>
+</head>
+
+<body>
+<a class="pular" href="#conteudo" data-i18n="geral.pular">Pular para o conteúdo</a>
+
+<!-- ============================== CABEÇALHO ============================== -->
+<header class="cabecalho" id="cabecalho">
+  <div class="cabecalho__interno">
+
+    <a class="marca" href="#topo" aria-label="Isabella de Luna, Psicóloga — ir para o início"
+       data-i18n-attr="aria-label:marca.aria">
+      <span class="marca__simbolo">
+        <img class="marca__creme" src="assets/coracao-creme.png" alt="" width="832" height="1072">
+        <img class="marca__vermelho" src="assets/coracao-vermelho.png" alt="" width="832" height="1072">
+      </span>
+      <span class="marca__texto">
+        <span class="marca__nome">Isabella de Luna</span>
+        <span class="marca__papel" data-i18n="marca.papel">Psicóloga</span>
+      </span>
+    </a>
+
+    <nav class="navegacao" id="navegacao" aria-label="Navegação principal"
+         data-i18n-attr="aria-label:nav.aria">
+      <ul class="navegacao__lista">
+        <li><a href="#sobre" data-i18n="nav.sobre">Sobre mim</a></li>
+        <li><a href="#atendimentos" data-i18n="nav.atendimentos">Atendimentos</a></li>
+        <li><a href="#como-funciona" data-i18n="nav.comoFunciona">Como funciona</a></li>
+        <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+      </ul>
+      <a class="botao botao--zap navegacao__zap" data-wa href="#contato">
+        <svg class="icone-zap" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#zap"/></svg>
+        WhatsApp
+      </a>
+
+      <div class="idioma" role="group" aria-label="Selecionar idioma"
+           data-i18n-attr="aria-label:idioma.aria">
+        <button type="button" class="idioma__opcao idioma__opcao--ativo" data-idioma="pt"
+                aria-pressed="true" lang="pt-BR">PT</button>
+        <span class="idioma__sep" aria-hidden="true">|</span>
+        <button type="button" class="idioma__opcao" data-idioma="en"
+                aria-pressed="false" lang="en">EN</button>
+      </div>
+    </nav>
+
+    <button class="hamburguer" id="hamburguer" type="button" aria-expanded="false" aria-controls="navegacao" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<main id="conteudo">
+
+<!-- ================================= HERO ================================ -->
+<section class="hero" id="topo">
+  <div class="textura textura--creme" aria-hidden="true"></div>
+
+  <div class="hero__interno">
+    <div class="hero__texto">
+      <p class="rotulo rotulo--trio reveal" data-i18n-html="hero.rotulo">Psicoterapia <span aria-hidden="true">•</span> Psicoterapia breve <span aria-hidden="true">•</span> Avaliação psicológica</p>
+
+      <h1 class="hero__titulo reveal" style="--atraso:80ms" data-i18n-html="hero.titulo">
+        Criando espaços onde pessoas <em>não precisem fingir.</em>
+      </h1>
+
+      <p class="hero__sub reveal" style="--atraso:160ms" data-i18n="hero.sub">
+        Psicoterapia, avaliação psicológica e psicoterapia breve com escuta,
+        cuidado e um olhar individual para cada história.
+      </p>
+
+      <div class="hero__acao reveal" style="--atraso:220ms">
+        <a class="botao botao--claro" data-wa href="#contato">
+          <svg class="icone-zap" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#zap"/></svg>
+          <span class="botao__texto" data-i18n-html="hero.cta">Conversar pelo WhatsApp <span class="seta" aria-hidden="true">→</span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__arte reveal reveal--marca" style="--atraso:120ms">
+      <img class="coracao coracao--hero" src="assets/coracao-creme.png"
+           data-i18n-attr="alt:hero.alt"
+           alt="Símbolo da marca Isabella de Luna: um coração anatômico atravessado por linhas contínuas."
+           width="832" height="1072" fetchpriority="high" decoding="async">
+    </div>
+  </div>
+</section>
+
+<!-- =============================== CONCEITO ============================== -->
+<section class="secao secao--nude conceito">
+  <div class="textura textura--vermelho" aria-hidden="true"></div>
+  <div class="interno interno--estreito centralizado">
+    <h2 class="titulo-editorial titulo-editorial--manifesto reveal" data-i18n="conceito.titulo">
+      Te enxergar é o meu compromisso.
+    </h2>
+    <p class="texto-grande texto-grande--centro reveal" style="--atraso:100ms" data-i18n="conceito.texto">
+      Vamos criar, juntos, mais uma possibilidade de existência para você.
+    </p>
+  </div>
+</section>
+
+<!-- ================================ SOBRE =============================== -->
+<section class="secao secao--claro sobre" id="sobre">
+  <div class="interno sobre__grade">
+
+    <figure class="foto reveal">
+      <img src="assets/isabella.jpg"
+           srcset="assets/isabella-small.jpg 420w, assets/isabella.jpg 603w"
+           sizes="(max-width: 900px) 86vw, 38vw"
+           data-i18n-attr="alt:sobre.alt"
+           alt="Retrato de Isabella de Luna, psicóloga."
+           width="603" height="1072" loading="lazy" decoding="async">
+    </figure>
+
+    <div class="sobre__texto">
+      <p class="rotulo rotulo--escuro reveal" data-i18n="sobre.rotulo">Sobre mim</p>
+      <h2 class="titulo reveal" style="--atraso:80ms" data-i18n="sobre.titulo">
+        Olá, me chamo Isabella de Luna.
+      </h2>
+
+      <div class="prosa reveal" style="--atraso:140ms">
+        <p data-i18n="sobre.p1">
+          Sou psicóloga clínica e educacional formada pelo Centro Universitário
+          UniFAFIRE, especialista em avaliação psicológica, e ofereço atendimentos
+          para adultos, adolescentes e crianças a partir dos 3 anos de idade.
+        </p>
+        <p data-i18n="sobre.p2">
+          Sigo a abordagem da Gestalt-terapia, que me permite olhar para cada pessoa
+          de forma singular e trazer o foco para o que ocorre no hoje, aqui e agora.
+        </p>
+        <p data-i18n="sobre.p3">
+          Estar atenta aos impactos sociais é um compromisso indispensável ao meu
+          fazer. Por isso, o aprofundamento nas temáticas raciais e na vivência da
+          comunidade LGBTQIAP+ é uma das bases da minha clínica.
+        </p>
+      </div>
+
+      <div class="sobre__fecho reveal" style="--atraso:180ms">
+        <p class="crp">CRP 02/29244</p>
+        <a class="link-seta" data-wa
+           data-wa-msg="Olá, Isabella! Encontrei seu site e gostaria de conhecer melhor o seu trabalho."
+           data-i18n-attr="data-wa-msg:wa.trabalho"
+           data-i18n-html="sobre.cta"
+           href="#contato">Conhecer meu trabalho <span class="seta" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =============================== SERVIÇOS ============================== -->
+<section class="secao secao--creme servicos" id="atendimentos">
+  <div class="interno">
+    <div class="secao__cabecalho">
+      <p class="rotulo rotulo--escuro reveal" data-i18n="servicos.rotulo">Atendimentos</p>
+      <h2 class="titulo titulo--largo reveal" style="--atraso:80ms" data-i18n="servicos.titulo">
+        Formas de cuidado para diferentes necessidades.
+      </h2>
+    </div>
+
+    <div class="servicos__lista">
+
+      <article class="servico reveal">
+        <p class="servico__num" aria-hidden="true">01</p>
+        <div class="servico__corpo">
+          <p class="servico__categoria" data-i18n="servico1.categoria">Psicoterapia</p>
+          <h3 class="servico__titulo" data-i18n="servico1.titulo">Um espaço para compreender o que está acontecendo.</h3>
+          <p class="servico__texto" data-i18n="servico1.p1">
+            A psicoterapia é um espaço onde criamos possibilidades de existência
+            sem deixar partes nossas de fora.
+          </p>
+          <p class="servico__texto" data-i18n="servico1.p2">
+            Assim, desenvolvemos os próprios sentidos, escolhemos nossos caminhos e
+            nos tornamos indivíduos autônomos, mas também coletivos, em contato com
+            todas as nossas cores e formas.
+          </p>
+          <a class="link-seta" data-wa
+             data-wa-msg="Olá, Isabella! Encontrei seu site e gostaria de saber mais sobre a psicoterapia."
+             data-i18n-attr="data-wa-msg:wa.psicoterapia"
+             data-i18n-html="servicos.saibaMais"
+             href="#contato">Saiba mais <span class="seta" aria-hidden="true">→</span></a>
+        </div>
+        <span class="servico__linha" aria-hidden="true"></span>
+      </article>
+
+      <article class="servico reveal">
+        <p class="servico__num" aria-hidden="true">02</p>
+        <div class="servico__corpo">
+          <p class="servico__categoria" data-i18n="servico2.categoria">Psicoterapia breve</p>
+          <h3 class="servico__titulo" data-i18n="servico2.titulo">Um processo com foco e tempo definidos.</h3>
+          <p class="servico__texto" data-i18n="servico2.p1">
+            Uma modalidade de acompanhamento voltada para demandas específicas, com
+            ênfase no alívio do sofrimento de forma pontual e orientação para que
+            você saiba como lidar com a situação caso ela surja novamente.
+          </p>
+          <a class="link-seta" data-wa
+             data-wa-msg="Olá, Isabella! Encontrei seu site e gostaria de saber mais sobre a psicoterapia breve."
+             data-i18n-attr="data-wa-msg:wa.breve"
+             data-i18n-html="servicos.saibaMais"
+             href="#contato">Saiba mais <span class="seta" aria-hidden="true">→</span></a>
+        </div>
+        <span class="servico__linha" aria-hidden="true"></span>
+      </article>
+
+      <article class="servico reveal">
+        <p class="servico__num" aria-hidden="true">03</p>
+        <div class="servico__corpo">
+          <p class="servico__categoria" data-i18n="servico3.categoria">Avaliação psicológica</p>
+          <h3 class="servico__titulo" data-i18n="servico3.titulo">Investigar também é uma forma de compreender.</h3>
+          <p class="servico__texto" data-i18n="servico3.p1">
+            Um processo de escuta aprofundada para compreender como cada pessoa se
+            relaciona com o mundo, com os estudos, com o trabalho e consigo mesma.
+            Trabalho com as opções de avaliação geral, avaliação com foco em
+            dificuldade de aprendizagem e orientação profissional.
+          </p>
+          <a class="link-seta" data-wa
+             data-wa-msg="Olá, Isabella! Encontrei seu site e gostaria de saber mais sobre a avaliação psicológica."
+             data-i18n-attr="data-wa-msg:wa.avaliacao"
+             data-i18n-html="servicos.saibaMais"
+             href="#contato">Saiba mais <span class="seta" aria-hidden="true">→</span></a>
+        </div>
+        <span class="servico__linha" aria-hidden="true"></span>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================= PRESENCIAL E ONLINE ========================= -->
+<section class="secao secao--claro modalidades" id="modalidades">
+  <div class="interno">
+    <div class="secao__cabecalho secao__cabecalho--centro">
+      <p class="rotulo rotulo--escuro reveal" data-i18n="modalidades.rotulo">Modalidades</p>
+      <h2 class="titulo reveal" style="--atraso:80ms" data-i18n="modalidades.titulo">De onde você estiver.</h2>
+    </div>
+
+    <div class="modalidades__grade">
+      <article class="modalidade modalidade--presencial reveal">
+        <p class="modalidade__rotulo" data-i18n="presencial.rotulo">Presencial</p>
+        <h3 class="modalidade__titulo" data-i18n="presencial.titulo">Um espaço reservado para você.</h3>
+        <p data-i18n="presencial.texto">
+          Atendimento presencial em Recife (PE), em um espaço
+          pensado para oferecer privacidade, acolhimento e tranquilidade.
+        </p>
+
+        <address class="endereco" data-i18n-html="presencial.endereco">
+          <span class="endereco__predio">Edifício Ambassador</span>
+          Rua José de Alencar, 44A &mdash; Sala 53<br>
+          Boa Vista, Recife (PE) &middot; CEP 50070-030
+        </address>
+
+        <a class="link-seta link-seta--sutil" href="https://www.google.com/maps/search/?api=1&query=Edif%C3%ADcio%20Ambassador%2C%20Rua%20Jos%C3%A9%20de%20Alencar%2C%2044A%2C%20Boa%20Vista%2C%20Recife%20-%20PE%2C%2050070-030"
+           target="_blank" rel="noopener noreferrer"
+           data-i18n-html="presencial.mapa">Ver no mapa <span class="seta" aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="modalidade modalidade--online reveal" style="--atraso:100ms">
+        <div class="textura textura--creme" aria-hidden="true"></div>
+        <p class="modalidade__rotulo" data-i18n="online.rotulo">Online</p>
+        <h3 class="modalidade__titulo" data-i18n="online.titulo">A mesma escuta, a qualquer distância.</h3>
+        <p data-i18n="online.texto">
+          Atendimento online para pessoas em diferentes cidades do Brasil, para
+          brasileiros residentes no exterior e para nativos falantes de inglês.
+        </p>
+
+        <div class="detalhe">
+          <span class="detalhe__titulo" data-i18n="online.detalheTitulo">Atendimento bilíngue</span>
+          <span data-i18n="online.detalheTexto">As sessões podem ser conduzidas em português ou em inglês,
+          conforme a sua preferência.</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="modalidades__rodape reveal">
+      <p class="texto-medio" data-i18n="modalidades.fecho">
+        Se você não tem certeza de qual modalidade ou serviço é mais adequado para
+        o seu momento, podemos conversar antes de definir o atendimento.
+      </p>
+      <a class="botao botao--escuro" data-wa
+         data-wa-msg="Olá, Isabella! Encontrei seu site e gostaria de conversar sobre as modalidades de atendimento."
+         data-i18n-attr="data-wa-msg:wa.modalidades"
+         href="#contato">
+        <svg class="icone-zap" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#zap"/></svg>
+        <span class="botao__texto" data-i18n-html="modalidades.cta">Conversar sobre atendimento <span class="seta" aria-hidden="true">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= DIFERENCIAIS ============================ -->
+<section class="secao secao--nude diferenciais">
+  <div class="textura textura--vermelho textura--canto" aria-hidden="true"></div>
+  <div class="interno">
+    <div class="secao__cabecalho">
+      <h2 class="titulo titulo--largo reveal" data-i18n="diferenciais.titulo">Um jeito de cuidar que respeita a sua história.</h2>
+    </div>
+
+    <ol class="diferenciais__lista">
+      <li class="diferencial reveal">
+        <p class="diferencial__num" aria-hidden="true">01</p>
+        <h3 class="diferencial__titulo" data-i18n="dif1.titulo">Escuta individualizada</h3>
+        <p data-i18n="dif1.texto">Cada processo parte da pessoa, da sua história e da demanda apresentada.</p>
+      </li>
+      <li class="diferencial reveal" style="--atraso:80ms">
+        <p class="diferencial__num" aria-hidden="true">02</p>
+        <h3 class="diferencial__titulo" data-i18n="dif2.titulo">Acolhimento sem julgamentos</h3>
+        <p data-i18n="dif2.texto">Um espaço profissional para falar sobre o que está sendo vivido com liberdade e respeito.</p>
+      </li>
+      <li class="diferencial reveal" style="--atraso:160ms">
+        <p class="diferencial__num" aria-hidden="true">03</p>
+        <h3 class="diferencial__titulo" data-i18n="dif3.titulo">Diferentes possibilidades de atendimento</h3>
+        <p data-i18n="dif3.texto">Psicoterapia, psicoterapia breve e avaliação psicológica, de acordo com a necessidade.</p>
+      </li>
+      <li class="diferencial reveal" style="--atraso:240ms">
+        <p class="diferencial__num" aria-hidden="true">04</p>
+        <h3 class="diferencial__titulo" data-i18n="dif4.titulo">Presencial ou online</h3>
+        <p data-i18n="dif4.texto">Flexibilidade para realizar o atendimento de acordo com sua localização e a modalidade adequada.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================ COMO FUNCIONA =========================== -->
+<section class="secao secao--claro etapas" id="como-funciona">
+  <div class="interno">
+    <div class="secao__cabecalho secao__cabecalho--centro">
+      <p class="rotulo rotulo--escuro reveal" data-i18n="etapas.rotulo">Como funciona</p>
+      <h2 class="titulo reveal" style="--atraso:80ms" data-i18n="etapas.titulo">Começar pode ser mais simples do que parece.</h2>
+    </div>
+
+    <ol class="etapas__lista">
+      <li class="etapa reveal">
+        <span class="etapa__ponto" aria-hidden="true"></span>
+        <p class="etapa__num" aria-hidden="true">01</p>
+        <h3 class="etapa__titulo" data-i18n="etapa1.titulo">Você entra em contato</h3>
+        <p data-i18n="etapa1.texto">Envie uma mensagem pelo WhatsApp e conte brevemente o que está buscando.</p>
+      </li>
+      <li class="etapa reveal" style="--atraso:120ms">
+        <span class="etapa__ponto" aria-hidden="true"></span>
+        <p class="etapa__num" aria-hidden="true">02</p>
+        <h3 class="etapa__titulo" data-i18n="etapa2.titulo">Conversamos sobre sua demanda</h3>
+        <p data-i18n="etapa2.texto">São esclarecidas suas dúvidas e as informações sobre o atendimento.</p>
+      </li>
+      <li class="etapa reveal" style="--atraso:240ms">
+        <span class="etapa__ponto" aria-hidden="true"></span>
+        <p class="etapa__num" aria-hidden="true">03</p>
+        <h3 class="etapa__titulo" data-i18n="etapa3.titulo">Definimos os próximos passos</h3>
+        <p data-i18n="etapa3.texto">A partir da sua necessidade, verificamos a modalidade e a disponibilidade mais adequadas.</p>
+      </li>
+    </ol>
+
+    <div class="centralizado reveal">
+      <a class="botao botao--escuro" data-wa href="#contato">
+        <svg class="icone-zap" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#zap"/></svg>
+        <span class="botao__texto" data-i18n-html="etapas.cta">Falar pelo WhatsApp <span class="seta" aria-hidden="true">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =============================== EXTERIOR ============================= -->
+<section class="secao secao--vermelho exterior" id="exterior">
+  <div class="textura textura--creme" aria-hidden="true"></div>
+  <img class="coracao coracao--fundo" src="assets/coracao-creme.png" alt="" width="832" height="1072" loading="lazy" decoding="async">
+
+  <div class="interno">
+    <p class="rotulo reveal" data-i18n="exterior.rotulo">Brasileiros no exterior e estrangeiros</p>
+    <h2 class="titulo-editorial reveal" style="--atraso:80ms" data-i18n="exterior.titulo">
+      Suporte psicológico para quem vive fora do país.
+    </h2>
+    <div class="prosa prosa--clara reveal" style="--atraso:140ms">
+      <p data-i18n="exterior.p1">Morar em outro país pode trazer experiências, mudanças e desafios particulares.</p>
+      <p data-i18n="exterior.p2">
+        Sou fluente em inglês e realizo sessões remotas com brasileiros residentes
+        no exterior e com nativos falantes de inglês, acolhendo as particularidades
+        de quem vive entre culturas. Os atendimentos podem ser conduzidos em
+        português ou em inglês, conforme a sua preferência.
+      </p>
+      <p data-i18n="exterior.p3">
+        Acredito que a distância geográfica não é um impedimento para cuidar
+        da sua saúde mental com o mesmo acolhimento e seriedade.
+      </p>
+    </div>
+    <a class="botao botao--claro reveal" style="--atraso:200ms" data-wa
+       data-wa-msg="Olá, Isabella! Encontrei seu site. Moro fora do Brasil e gostaria de saber sobre o atendimento online."
+       data-i18n-attr="data-wa-msg:wa.exterior"
+       href="#contato">
+      <svg class="icone-zap" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#zap"/></svg>
+      <span class="botao__texto" data-i18n-html="exterior.cta">Quero saber sobre o atendimento online <span class="seta" aria-hidden="true">→</span></span>
+    </a>
+    <p class="microcopy reveal" style="--atraso:240ms" data-i18n-html="exterior.microcopy">
+      Atendimento bilíngue <span aria-hidden="true">·</span> Português e inglês
+    </p>
+  </div>
+</section>
+
+<!-- ================================= FAQ ================================ -->
+<section class="secao secao--creme faq" id="faq">
+  <div class="interno interno--medio">
+    <div class="secao__cabecalho">
+      <p class="rotulo rotulo--escuro reveal" data-i18n="faq.rotulo">Dúvidas frequentes</p>
+      <h2 class="titulo reveal" style="--atraso:80ms" data-i18n="faq.titulo">Talvez você também esteja se perguntando.</h2>
+    </div>
+
+    <div class="faq__filtros" role="group" aria-label="Filtrar perguntas por categoria"
+         data-i18n-attr="aria-label:faq.filtroAria">
+      <button type="button" class="faq__filtro faq__filtro--ativo" data-categoria="todos" aria-pressed="true" data-i18n="faq.filtroTodos">Todos</button>
+      <button type="button" class="faq__filtro" data-categoria="primeiros-passos" aria-pressed="false" data-i18n="faq.grupo1">Primeiros passos</button>
+      <button type="button" class="faq__filtro" data-categoria="psicoterapia" aria-pressed="false" data-i18n="faq.grupo2">Psicoterapia</button>
+      <button type="button" class="faq__filtro" data-categoria="avaliacao-psicologica" aria-pressed="false" data-i18n="faq.grupo3">Avaliação psicológica</button>
+    </div>
+
+    <div class="acordeao">
+
+      <div class="acordeao__grupo" data-categoria="primeiros-passos">
+        <h3 class="acordeao__rotulo reveal" data-i18n="faq.grupo1">Primeiros passos</h3>
+        <div class="acordeao__lista">
+
+          <div class="acordeao__item reveal">
+            <h4 class="acordeao__cabecalho"><button class="acordeao__gatilho" type="button" aria-expanded="false" aria-controls="faq-1" id="faq-1-btn">
+              <span data-i18n="faq.q1">Preciso saber o que dizer para agendar uma sessão?</span>
+              <span class="acordeao__icone" aria-hidden="true"></span>
+            </button></h4>
+            <div class="acordeao__painel" id="faq-1" role="region" aria-labelledby="faq-1-btn" hidden>
+              <p data-i18n="faq.a1">Não! Na psicoterapia existem muitas possibilidades de como conduzir uma sessão eficaz mesmo que você não saiba ao certo por onde começar.</p>
+            </div>
+          </div>
+
+          <div class="acordeao__item reveal">
+            <h4 class="acordeao__cabecalho"><button class="acordeao__gatilho" type="button" aria-expanded="false" aria-controls="faq-2" id="faq-2-btn">
+              <span data-i18n="faq.q2">Qual a diferença entre psicoterapia e avaliação psicológica?</span>
+              <span class="acordeao__icone" aria-hidden="true"></span>
+            </button></h4>
+            <div class="acordeao__painel" id="faq-2" role="region" aria-labelledby="faq-2-btn" hidden>
+              <p data-i18n="faq.a2">A avaliação psicológica tem um número de sessões definido e o objetivo de chegar a um possível diagnóstico. A psicoterapia não tem prazo fixo e tem como foco autoconhecimento, desenvolvimento pessoal e melhora na qualidade de vida do paciente.</p>
+            </div>
+          </div>
+
+          <div class="acordeao__item reveal">
+            <h4 class="acordeao__cabecalho"><button class="acordeao__gatilho" type="button" aria-expanded="false" aria-controls="faq-3" id="faq-3-btn">
+              <span data-i18n="faq.q3">Quanto tempo dura cada sessão?</span>
+              <span class="acordeao__icone" aria-hidden="true"></span>
+            </button></h4>
+            <div class="acordeao__painel" id="faq-3" role="region" aria-labelledby="faq-3-btn" hidden>
+              <p data-i18n="faq.a3">As sessões têm duração aproximada de 45 minutos.</p>
+            </div>
+          </div>
+
+          <div class="acordeao__item reveal">
+            <h4 class="acordeao__cabecalho"><button class="acordeao__gatilho" type="button" aria-expanded="false" aria-controls="faq-4" id="faq-4-btn">
+              <span data-i18n="faq.q4">Com que frequência acontecem os atendimentos?</span>
+              <span class="acordeao__icone" aria-hidden="true"></span>
+            </button></h4>
+            <div class="acordeao__painel" id="faq-4" role="region" aria-labelledby="faq-4-btn" hidden>
+              <p data-i18n="faq.a4">A frequência é definida considerando a demanda, os objetivos do acompanhamento e a avaliação profissional.</p>
+            </div>
+          </div>
+
+          <div class="acordeao__item reveal">
+            <h4 class="acordeao__cabecalho"><button class="acordeao__gatilho" type="button" aria-expanded="false" aria-controls="faq-5" id="faq-5-btn">
+              <span data-i18n="faq.q5">Como faço para agendar?</span>
+              <span class="acordeao__icone" aria-hidden="true"></span>
+            </button></h4>
+            <div class="acordeao__painel" id="faq-5" role="region" aria-labelledby="faq-5-btn" hidden>
+              <p data-i18n="faq.a5">Clique no botão de WhatsApp e envie uma mensagem. Você receberá as informações sobre disponibilidade, modalidade e próximos passos.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="acordeao__grupo" data-categoria="psicoterapia">
+        <h3 class="acordeao__rotulo reveal" data-i18n="faq.grupo2">Psicoterapia</h3>
+        <div class="acordeao__lista">
+
+          <div class="acordeao__item reveal">
+            <h4 class="acordeao__cabecalho"><button class="acordeao__gatilho" type="button" aria-expanded="false" aria-controls="faq-6" id="faq-6-btn">
+              <span data-i18n="faq.q6">Como funciona a psicoterapia breve?</span>
+              <span class="acordeao__icone" aria-hidden="true"></span>
+            </button></h4>
+            <div class="acordeao__painel" id="faq-6" role="region" aria-labelledby="faq-6-btn" hidden>
+              <p data-i18n="faq.a6a">Diferente do acompanhamento tradicional, ela parte de uma queixa específica e trabalha para que você possa compreendê-la, ressignificá-la e encontrar novos caminhos.</p>
+              <p data-i18n="faq.a6b">O serviço pode ser contratado como uma porta de entrada para quem se encontra com alguma dificuldade de engajar na psicoterapia no momento, mas deseja um suporte qualificado.</p>
+            </div>
+          </div>
+
+          <div class="acordeao__item reveal">
+            <h4 class="acordeao__cabecalho"><button class="acordeao__gatilho" type="button" aria-expanded="false" aria-controls="faq-7" id="faq-7-btn">
+              <span data-i18n="faq.q7">Posso fazer apenas uma sessão de psicoterapia?</span>
+              <span class="acordeao__icone" aria-hidden="true"></span>
+            </button></h4>
+            <div class="acordeao__painel" id="faq-7" role="region" aria-labelledby="faq-7-btn" hidden>
+              <p data-i18n="faq.a7">Na modalidade de psicoterapia breve ofereço também a possibilidade de sessão única: um espaço de escuta imediata para momentos em que você precisa de um acolhimento rápido, sem compromisso de continuidade, como um plantão psicológico com a mesma profundidade, seriedade, escuta e compromisso ético que guiam minha prática.</p>
+            </div>
+          </div>
+
+          <div class="acordeao__item reveal">
+            <h4 class="acordeao__cabecalho"><button class="acordeao__gatilho" type="button" aria-expanded="false" aria-controls="faq-8" id="faq-8-btn">
+              <span data-i18n="faq.q8">Como funciona a psicoterapia online?</span>
+              <span class="acordeao__icone" aria-hidden="true"></span>
+            </button></h4>
+            <div class="acordeao__painel" id="faq-8" role="region" aria-labelledby="faq-8-btn" hidden>
+              <p data-i18n="faq.a8">O atendimento online é realizado por videochamada e pode ser uma alternativa para pessoas que estão em diferentes cidades do Brasil, para brasileiros residentes no exterior e para estrangeiros, observadas as condições aplicáveis à modalidade.</p>
+            </div>
+          </div>
+
+          <div class="acordeao__item reveal">
+            <h4 class="acordeao__cabecalho"><button class="acordeao__gatilho" type="button" aria-expanded="false" aria-controls="faq-9" id="faq-9-btn">
+              <span data-i18n="faq.q9">Quem pode fazer atendimento online?</span>
+              <span class="acordeao__icone" aria-hidden="true"></span>
+            </button></h4>
+            <div class="acordeao__painel" id="faq-9" role="region" aria-labelledby="faq-9-btn" hidden>
+              <p data-i18n="faq.a9">Há atendimento online para brasileiros residentes no exterior e para nativos falantes de inglês. Entre em contato para verificar as condições de atendimento para sua localização.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="acordeao__grupo" data-categoria="avaliacao-psicologica">
+        <h3 class="acordeao__rotulo reveal" data-i18n="faq.grupo3">Avaliação psicológica</h3>
+        <div class="acordeao__lista">
+
+          <div class="acordeao__item reveal">
+            <h4 class="acordeao__cabecalho"><button class="acordeao__gatilho" type="button" aria-expanded="false" aria-controls="faq-10" id="faq-10-btn">
+              <span data-i18n="faq.q10">Como funciona a avaliação psicológica geral?</span>
+              <span class="acordeao__icone" aria-hidden="true"></span>
+            </button></h4>
+            <div class="acordeao__painel" id="faq-10" role="region" aria-labelledby="faq-10-btn" hidden>
+              <p data-i18n="faq.a10a">Parte de uma investigação de aspectos emocionais, cognitivos e relacionais — seja como parte de um processo terapêutico ou para esclarecimento diagnóstico. O processo inclui entrevistas, observação e, quando necessário, a aplicação de instrumentos disponíveis dentro da minha formação.</p>
+              <p data-i18n="faq.a10b">Após a análise, entrego um documento com considerações e encaminhamentos, sempre de forma ética, transparente e em conformidade com a Resolução CFP nº 09/2018.</p>
+            </div>
+          </div>
+
+          <div class="acordeao__item reveal">
+            <h4 class="acordeao__cabecalho"><button class="acordeao__gatilho" type="button" aria-expanded="false" aria-controls="faq-11" id="faq-11-btn">
+              <span data-i18n="faq.q11">Como funciona a avaliação psicológica para dificuldades de aprendizagem?</span>
+              <span class="acordeao__icone" aria-hidden="true"></span>
+            </button></h4>
+            <div class="acordeao__painel" id="faq-11" role="region" aria-labelledby="faq-11-btn" hidden>
+              <p data-i18n="faq.a11">Atendo crianças e adolescentes encaminhados pela escola ou pela família, compreendendo o jeito único de aprender e identificando barreiras e potencialidades para auxiliar na construção de estratégias pedagógicas e emocionais.</p>
+            </div>
+          </div>
+
+          <div class="acordeao__item reveal">
+            <h4 class="acordeao__cabecalho"><button class="acordeao__gatilho" type="button" aria-expanded="false" aria-controls="faq-12" id="faq-12-btn">
+              <span data-i18n="faq.q12">Como funciona a orientação profissional?</span>
+              <span class="acordeao__icone" aria-hidden="true"></span>
+            </button></h4>
+            <div class="acordeao__painel" id="faq-12" role="region" aria-labelledby="faq-12-btn" hidden>
+              <p data-i18n="faq.a12">Essa modalidade é oferecida para jovens e adultos em dúvida sobre qual caminho seguir, ajudando a iluminar interesses, habilidades e valores pessoais.</p>
+            </div>
+          </div>
+
+          <div class="acordeao__item reveal">
+            <h4 class="acordeao__cabecalho"><button class="acordeao__gatilho" type="button" aria-expanded="false" aria-controls="faq-13" id="faq-13-btn">
+              <span data-i18n="faq.q13">A avaliação psicológica é realizada em quantas sessões?</span>
+              <span class="acordeao__icone" aria-hidden="true"></span>
+            </button></h4>
+            <div class="acordeao__painel" id="faq-13" role="region" aria-labelledby="faq-13-btn" hidden>
+              <p data-i18n="faq.a13">A duração varia conforme a finalidade e as características de cada avaliação. No primeiro contato, é possível explicar como funciona o processo específico que você procura.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =============================== CTA FINAL ============================ -->
+<section class="secao secao--vermelho final" id="contato">
+  <div class="textura textura--creme" aria-hidden="true"></div>
+  <img class="coracao coracao--fundo coracao--centro" src="assets/coracao-creme.png" alt="" width="832" height="1072" loading="lazy" decoding="async">
+
+  <div class="interno centralizado">
+    <h2 class="titulo-editorial reveal" data-i18n="final.titulo">Talvez o primeiro passo seja conversar.</h2>
+    <p class="texto-grande texto-grande--claro reveal" style="--atraso:100ms" data-i18n="final.texto">
+      Se você está considerando iniciar um acompanhamento psicológico, entre em
+      contato para conhecer melhor o trabalho e tirar suas dúvidas.
+    </p>
+    <a class="botao botao--claro botao--grande reveal" style="--atraso:180ms" data-wa href="#contato">
+      <svg class="icone-zap" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#zap"/></svg>
+      <span class="botao__texto" data-i18n-html="final.cta">Conversar pelo WhatsApp <span class="seta" aria-hidden="true">→</span></span>
+    </a>
+    <p class="assinatura reveal" style="--atraso:240ms" data-i18n-html="final.assinatura">
+      Isabella de Luna <span aria-hidden="true">·</span> Psicóloga
+      <span aria-hidden="true">·</span> CRP 02/29244
+    </p>
+  </div>
+</section>
+
+</main>
+
+<!-- ================================ RODAPÉ ============================== -->
+<footer class="rodape">
+  <div class="interno rodape__grade">
+
+    <div class="rodape__marca">
+      <img class="rodape__simbolo" src="assets/coracao-creme.png" alt="" width="832" height="1072" loading="lazy" decoding="async">
+      <p class="rodape__nome">Isabella de Luna</p>
+      <p class="rodape__papel" data-i18n-html="rodape.papel">Psicóloga <span aria-hidden="true">·</span> CRP 02/29244</p>
+    </div>
+
+    <nav class="rodape__bloco" aria-label="Navegação do rodapé"
+         data-i18n-attr="aria-label:rodape.aria">
+      <h2 class="rodape__titulo" data-i18n="rodape.navegar">Navegar</h2>
+      <ul>
+        <li><a href="#sobre" data-i18n="nav.sobre">Sobre mim</a></li>
+        <li><a href="#atendimentos" data-i18n="nav.atendimentos">Atendimentos</a></li>
+        <li><a href="#como-funciona" data-i18n="nav.comoFunciona">Como funciona</a></li>
+        <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+        <li><a data-wa href="#contato" data-i18n="rodape.contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <div class="rodape__bloco">
+      <h2 class="rodape__titulo" data-i18n="rodape.atendimento">Atendimento</h2>
+      <address class="rodape__endereco" data-i18n-html="rodape.endereco">
+        Edifício Ambassador<br>
+        Rua José de Alencar, 44A &mdash; Sala 53<br>
+        Boa Vista, Recife (PE)<br>
+        CEP 50070-030
+      </address>
+      <ul class="rodape__info">
+        <li data-i18n="rodape.info1">Online para todo o Brasil</li>
+        <li data-i18n="rodape.info2">Online para brasileiros residentes no exterior</li>
+        <li data-i18n="rodape.info3">Online para nativos falantes de inglês</li>
+      </ul>
+    </div>
+
+    <div class="rodape__bloco">
+      <h2 class="rodape__titulo" data-i18n="rodape.contato">Contato</h2>
+      <ul>
+        <li><a data-wa href="#contato">WhatsApp</a></li>
+        <li><a href="https://www.instagram.com/existiremcor.psi/" target="_blank" rel="noopener noreferrer me">@existiremcor.psi</a></li>
+        <li><a href="mailto:existiremcor.psi@gmail.com">existiremcor.psi@gmail.com</a></li>
+        <li><a href="politica-de-privacidade.html" data-i18n="rodape.politica">Política de Privacidade</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="interno rodape__base">
+    <p>&copy; <span id="ano"></span> <span data-i18n="rodape.direitos">Isabella de Luna. Todos os direitos reservados.</span></p>
+    <p data-i18n="rodape.aviso">Este site tem caráter informativo e não substitui o atendimento profissional.</p>
+  </div>
+</footer>
+
+<!-- ======================= WHATSAPP FIXO — DESKTOP ====================== -->
+<a class="zap-flutuante" data-wa href="#contato" aria-label="Conversar pelo WhatsApp"
+   data-i18n-attr="aria-label:zap.aria">
+  <svg class="icone-zap" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#zap"/></svg>
+  <span data-i18n="zap.flutuante">Conversar comigo</span>
+</a>
+
+<!-- ======================= WHATSAPP FIXO — MOBILE ======================= -->
+<div class="barra-zap">
+  <a class="barra-zap__botao" data-wa href="#contato">
+    <svg class="icone-zap" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#zap"/></svg>
+    <span class="botao__texto" data-i18n-html="zap.barra">WhatsApp — Conversar comigo <span class="seta" aria-hidden="true">→</span></span>
+  </a>
+</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="zap" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.13-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.53.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.41-.56-.42h-.47c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.22-.17-.47-.29Z"/></symbol>
+</svg>
+
+<script src="script.js?v=3" defer></script>
+<script src="i18n.js?v=1" defer></script>
+</body>
+</html>

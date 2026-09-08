@@ -1,0 +1,15 @@
+# rascunhos de trabalho (capturas de tela, testes)
+_*.png
+
+# sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# editores
+.vscode/
+.idea/
+*.swp
+
+# Vercel
+.vercel

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Mesmo bloco anti-flash do index.html: aplica o idioma salvo antes da
+     primeira pintura, com timeout de segurança caso o i18n.js não carregue. -->
+<script>
+(function () {
+  try {
+    if (localStorage.getItem("isabella-idioma") === "en") {
+      document.documentElement.lang = "en";
+      document.documentElement.setAttribute("data-i18n-pendente", "");
+      setTimeout(function () {
+        document.documentElement.removeAttribute("data-i18n-pendente");
+      }, 1200);
+    }
+  } catch (e) {}
+})();
+</script>
+<style>html[data-i18n-pendente] body { visibility: hidden; }</style>
+
+<title>Política de Privacidade | Isabella de Luna</title>
+<meta name="description" content="Política de Privacidade do site de Isabella de Luna, psicóloga.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#9E2027">
+
+<link rel="icon" href="assets/favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=4">
+
+<style>
+  .documento { padding-block: calc(var(--altura-header) + 4rem) clamp(4rem, 8vw, 6rem); }
+  .documento .interno { max-width: 780px; }
+  .documento h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.125rem, 1.5rem + 3vw, 3.25rem);
+    line-height: 1.1;
+    letter-spacing: -.018em;
+    color: var(--vinho);
+  }
+  .documento h2 {
+    margin: clamp(2.5rem, 5vw, 3.5rem) 0 1rem;
+    font-family: var(--serif);
+    font-size: clamp(1.375rem, 1.2rem + .9vw, 1.75rem);
+    line-height: 1.2;
+    color: var(--vinho);
+  }
+  .documento p,
+  .documento li {
+    font-weight: 300;
+    color: var(--tinta-suave);
+    line-height: 1.75;
+  }
+  .documento p + p { margin-top: 1.1rem; }
+  .documento ul {
+    margin-top: 1.1rem;
+    padding-left: 1.2rem;
+    list-style: disc;
+  }
+  .documento li { margin-bottom: .6rem; }
+  .documento .voltar { margin-bottom: 2.5rem; }
+  .documento .atualizacao {
+    margin-top: .75rem;
+    font-size: .8125rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--vermelho);
+  }
+  .aviso-editorial {
+    margin: 2.5rem 0;
+    padding: 1.5rem 1.75rem;
+    border-left: 2px solid var(--vermelho);
+    background: rgba(158, 32, 39, .06);
+    font-size: .9375rem;
+  }
+</style>
+</head>
+
+<body data-i18n-titulo="meta.tituloPolitica" data-i18n-descricao="meta.descricaoPolitica">
+<a class="pular" href="#conteudo" data-i18n="geral.pular">Pular para o conteúdo</a>
+
+<header class="cabecalho cabecalho--fixo">
+  <div class="cabecalho__interno">
+    <a class="marca" href="index.html" aria-label="Isabella de Luna, Psicóloga — ir para o início"
+       data-i18n-attr="aria-label:marca.aria">
+      <span class="marca__simbolo">
+        <img class="marca__creme" src="assets/coracao-creme.png" alt="" width="832" height="1072">
+        <img class="marca__vermelho" src="assets/coracao-vermelho.png" alt="" width="832" height="1072">
+      </span>
+      <span class="marca__texto">
+        <span class="marca__nome">Isabella de Luna</span>
+        <span class="marca__papel" data-i18n="marca.papel">Psicóloga</span>
+      </span>
+    </a>
+    <nav class="navegacao" aria-label="Navegação principal"
+         data-i18n-attr="aria-label:nav.aria">
+      <ul class="navegacao__lista">
+        <li><a href="index.html#sobre" data-i18n="nav.sobre">Sobre mim</a></li>
+        <li><a href="index.html#atendimentos" data-i18n="nav.atendimentos">Atendimentos</a></li>
+        <li><a href="index.html#faq" data-i18n="nav.faq">FAQ</a></li>
+      </ul>
+      <a class="botao botao--zap" data-wa href="index.html#contato">
+        <svg class="icone-zap" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#zap"/></svg>
+        WhatsApp
+      </a>
+    </nav>
+
+    <!-- Esta página não tem hambúrguer, e no mobile o .navegacao fica oculto.
+         Por isso o toggle mora fora do nav aqui: assim continua alcançável. -->
+    <div class="idioma" role="group" aria-label="Selecionar idioma"
+         data-i18n-attr="aria-label:idioma.aria">
+      <button type="button" class="idioma__opcao idioma__opcao--ativo" data-idioma="pt"
+              aria-pressed="true" lang="pt-BR">PT</button>
+      <span class="idioma__sep" aria-hidden="true">|</span>
+      <button type="button" class="idioma__opcao" data-idioma="en"
+              aria-pressed="false" lang="en">EN</button>
+    </div>
+  </div>
+</header>
+
+<main class="secao secao--claro documento" id="conteudo">
+  <div class="interno">
+
+    <p class="voltar"><a class="link-seta" href="index.html" style="margin-top:0"
+      data-i18n-html="pol.voltar"><span class="seta" aria-hidden="true">←</span> Voltar ao site</a></p>
+
+    <h1 data-i18n="pol.titulo">Política de Privacidade</h1>
+    <p class="atualizacao"><span data-i18n="pol.atualizacao">Última atualização:</span> <span data-cfg="dataPolitica"></span></p>
+
+    <div class="aviso-editorial" data-i18n-html="pol.aviso">
+      <strong>Antes de publicar:</strong> este texto é um modelo de partida. Revise cada
+      item com apoio jurídico e ajuste conforme as ferramentas realmente utilizadas no
+      site (hospedagem, formulários, analytics, pixels). Substitua todos os campos
+      marcados no arquivo <code>script.js</code>.
+    </div>
+
+    <h2 data-i18n="pol.h1">1. Quem é responsável pelos dados</h2>
+    <p data-i18n-html="pol.p1">
+      Este site é mantido por Isabella de Luna, psicóloga, inscrita no CRP 02/29244. O contato para assuntos relacionados a dados
+      pessoais é o e-mail
+      <a href="mailto:existiremcor.psi@gmail.com">existiremcor.psi@gmail.com</a>.
+    </p>
+    <address class="endereco" data-i18n-html="presencial.endereco">
+      <span class="endereco__predio">Edifício Ambassador</span>
+      Rua José de Alencar, 44A &mdash; Sala 53<br>
+      Boa Vista, Recife (PE) &middot; CEP 50070-030
+    </address>
+
+    <h2 data-i18n="pol.h2">2. Quais dados são coletados</h2>
+    <p data-i18n="pol.p2">
+      Este site é institucional e não possui formulários de cadastro. Os dados
+      eventualmente tratados são:
+    </p>
+    <ul>
+      <li data-i18n-html="pol.li2a">
+        <strong>Dados que você envia voluntariamente:</strong> ao clicar em um botão de
+        WhatsApp, você é direcionado ao aplicativo e as informações que decidir enviar
+        (nome, telefone e o conteúdo da mensagem) passam a ser tratadas nesse canal.
+      </li>
+      <li data-i18n-html="pol.li2b">
+        <strong>Dados técnicos de navegação:</strong> registros comuns de acesso mantidos
+        pelo serviço de hospedagem, como endereço IP, data e hora do acesso e tipo de
+        navegador.
+      </li>
+    </ul>
+
+    <h2 data-i18n="pol.h3">3. Para que os dados são utilizados</h2>
+    <p data-i18n="pol.p3">
+      As informações enviadas por você são utilizadas exclusivamente para responder ao
+      contato, esclarecer dúvidas sobre os serviços e, quando for o caso, organizar o
+      agendamento de atendimento. Os registros técnicos servem para manter a segurança e
+      o funcionamento do site.
+    </p>
+
+    <h2 data-i18n="pol.h4">4. Sigilo profissional</h2>
+    <p data-i18n="pol.p4">
+      As informações compartilhadas no contexto de atendimento psicológico são protegidas
+      pelo sigilo profissional previsto no Código de Ética Profissional do Psicólogo, e
+      seu tratamento observa as hipóteses legais aplicáveis.
+    </p>
+
+    <h2 data-i18n="pol.h5">5. Compartilhamento</h2>
+    <p data-i18n="pol.p5">
+      Seus dados não são vendidos nem cedidos para fins comerciais. O compartilhamento
+      ocorre apenas com prestadores necessários ao funcionamento do site e do canal de
+      atendimento (por exemplo, serviço de hospedagem e o próprio WhatsApp), ou quando
+      houver obrigação legal.
+    </p>
+
+    <h2 data-i18n="pol.h6">6. Cookies</h2>
+    <p data-i18n="pol.p6">
+      Este site não utiliza cookies próprios de rastreamento nem ferramentas de
+      publicidade. Caso venham a ser adicionadas ferramentas de análise de audiência,
+      esta política será atualizada antes da ativação.
+    </p>
+
+    <h2 data-i18n="pol.h7">7. Seus direitos</h2>
+    <p data-i18n-html="pol.p7">
+      Nos termos da Lei Geral de Proteção de Dados (Lei nº 13.709/2018), você pode
+      solicitar confirmação de tratamento, acesso, correção, anonimização, portabilidade
+      ou eliminação dos seus dados, além de informações sobre compartilhamento. Para
+      exercer esses direitos, escreva para
+      <a href="mailto:existiremcor.psi@gmail.com">existiremcor.psi@gmail.com</a>.
+    </p>
+
+    <h2 data-i18n="pol.h8">8. Retenção</h2>
+    <p data-i18n="pol.p8">
+      As mensagens trocadas são mantidas pelo período necessário ao atendimento da
+      finalidade que motivou o contato e ao cumprimento de obrigações legais e
+      regulamentares aplicáveis à atividade profissional.
+    </p>
+
+    <h2 data-i18n="pol.h9">9. Alterações desta política</h2>
+    <p data-i18n="pol.p9">
+      Esta política pode ser atualizada a qualquer momento. A data da última revisão está
+      indicada no início da página.
+    </p>
+
+    <p style="margin-top:3rem">
+      <a class="link-seta" href="index.html" style="margin-top:0"
+        data-i18n-html="pol.voltar"><span class="seta" aria-hidden="true">←</span> Voltar ao site</a>
+    </p>
+
+  </div>
+</main>
+
+<footer class="rodape">
+  <div class="interno rodape__base" style="margin-top:0;border-top:0;padding-top:0">
+    <p>&copy; <span id="ano"></span> <span data-i18n="rodape.direitos">Isabella de Luna. Todos os direitos reservados.</span></p>
+    <p data-i18n-html="rodape.papel">Psicóloga <span aria-hidden="true">·</span> CRP 02/29244</p>
+  </div>
+</footer>
+
+<div class="barra-zap">
+  <a class="barra-zap__botao" data-wa href="index.html#contato">
+    <svg class="icone-zap" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#zap"/></svg>
+    <span class="botao__texto" data-i18n-html="zap.barra">WhatsApp — Conversar comigo <span class="seta" aria-hidden="true">→</span></span>
+  </a>
+</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="zap" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.13-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.53.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.41-.56-.42h-.47c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.22-.17-.47-.29Z"/></symbol>
+</svg>
+
+<script src="script.js?v=3" defer></script>
+<script src="i18n.js?v=1" defer></script>
+</body>
+</html>
