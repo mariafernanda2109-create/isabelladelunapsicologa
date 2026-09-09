@@ -1324,12 +1324,32 @@ body::after {
     font-size: .9375rem;
   }
 
-  /* hero empilhado: texto primeiro, coração depois */
-  .hero { min-height: 0; padding-bottom: clamp(3rem, 8vw, 5rem); }
-  .hero__interno { grid-template-columns: 1fr; }
+  /* hero empilhado: texto primeiro, coração depois.
+
+     Rótulo, título, apoio e botão precisam caber sem rolagem em qualquer
+     celular, então o tamanho do H1 e todo o ritmo vertical encolhem junto
+     com a ALTURA da tela, não só com a largura. A unidade é svh — a altura
+     visível com a barra do navegador à mostra, que é o estado em que a
+     pessoa chega no site. O coração fica abaixo da dobra, de propósito. */
+  .hero {
+    min-height: 0;
+    padding-block: calc(var(--altura-header) + clamp(.5rem, 2svh, 2rem))
+                   clamp(1.5rem, 4svh, 3rem);
+  }
+  .hero__interno { grid-template-columns: 1fr; gap: clamp(.75rem, 2.5svh, 2rem); }
   .hero__texto { order: 1; }
   .hero__arte  { order: 2; margin-top: 1rem; }
   .coracao--hero { height: clamp(14.375rem, 42vw, 21.25rem); }
+
+  .hero__titulo {
+    font-size: clamp(1.875rem, 7.2svh, 3.6rem);
+    line-height: 1.1;
+  }
+  .hero__sub {
+    margin-top: clamp(.5rem, 1.6svh, 1.25rem);
+    font-size: clamp(.875rem, 1.9svh, 1rem);
+  }
+  .hero__acao { margin-top: clamp(.75rem, 2svh, 1.5rem); }
 
   .sobre__grade { grid-template-columns: 1fr; }
   .foto { max-width: 28.75rem; }
@@ -1401,6 +1421,21 @@ body::after {
   .marca__nome { font-size: 1.125rem; }
   .marca__simbolo { width: 1.75rem; height: 2.3125rem; }
   .rotulo--trio { letter-spacing: .12em; }
+}
+
+/* --------------------------------------------- CELULAR DE TELA BAIXA --
+   Aparelho pequeno com a barra do navegador à mostra: sobra pouca altura
+   e o botão do hero ficava abaixo da dobra. Aperta rótulo, apoio e botão
+   — o alvo de toque continua acima de 52px. */
+@media (max-width: 56.25em) and (max-height: 32em) {
+  .hero { padding-block: calc(var(--altura-header) + .25rem) .75rem; }
+  .rotulo--trio { font-size: .625rem; letter-spacing: .1em; margin-bottom: .25rem; }
+  .hero__sub { margin-top: .375rem; font-size: .8125rem; line-height: 1.4; }
+  .hero__acao { margin-top: .5rem; }
+  .hero__acao .botao {
+    padding-block: .8125rem;
+    font-size: .875rem;
+  }
 }
 
 /* ------------------------------------------------- MOVIMENTO REDUZIDO */
