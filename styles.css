@@ -641,7 +641,10 @@ body::after {
   border-radius: .375rem;
   object-fit: cover;
   aspect-ratio: 4 / 5;
-  object-position: 50% 28%;
+  /* a foto é bem mais alta que o quadro 4:5, então o recorte mostra ~61%
+     da altura. Este ancoramento deixa os olhos por volta de um terço da
+     faixa visível, que é o equilíbrio usual de um retrato. */
+  object-position: 50% 60%;
 }
 .foto::after {
   content: "";

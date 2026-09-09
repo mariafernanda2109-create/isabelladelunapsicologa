@@ -58,7 +58,7 @@ const I18N = {
     "sobre.alt": "Retrato de Isabella de Luna, psicóloga.",
     "sobre.rotulo": "Sobre mim",
     "sobre.titulo": "Olá, me chamo Isabella de Luna.",
-    "sobre.p1": "Sou psicóloga clínica e educacional formada pelo Centro Universitário UniFAFIRE, especialista em avaliação psicológica, e ofereço atendimentos para adultos, adolescentes e crianças a partir dos 3 anos de idade.",
+    "sobre.p1": "Sou psicóloga clínica e educacional formada pelo Centro Universitário UniFAFIRE, especialista em avaliação psicológica e ofereço atendimentos para adultos, adolescentes e crianças a partir dos 3 anos de idade.",
     "sobre.p2": "Sigo a abordagem da Gestalt-terapia, que me permite olhar para cada pessoa de forma singular e trazer o foco para o que ocorre no hoje, aqui e agora.",
     "sobre.p3": "Estar atenta aos impactos sociais é um compromisso indispensável ao meu fazer. Por isso, o aprofundamento nas temáticas raciais e na vivência da comunidade LGBTQIAP+ é uma das bases da minha clínica.",
     "sobre.cta": "Conhecer meu trabalho <span class=\"seta\" aria-hidden=\"true\">→</span>",
