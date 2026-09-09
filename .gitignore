@@ -6,9 +6,10 @@ _*.png
 Thumbs.db
 desktop.ini
 
-# editores
+# editores e ferramentas locais
 .vscode/
 .idea/
+.impeccable/
 *.swp
 
 # Vercel
