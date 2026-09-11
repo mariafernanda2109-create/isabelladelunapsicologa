@@ -184,6 +184,7 @@ const I18N = {
     "rodape.politica": "Política de Privacidade",
     "rodape.direitos": "Isabella de Luna. Todos os direitos reservados.",
     "rodape.aviso": "Este site tem caráter informativo e não substitui o atendimento profissional.",
+    "rodape.credito": "Site feito por",
 
     /* --- botões flutuantes ------------------------------------------- */
     "zap.aria": "Conversar pelo WhatsApp",
@@ -392,6 +393,7 @@ const I18N = {
     "rodape.politica": "Privacy Policy",
     "rodape.direitos": "Isabella de Luna. All rights reserved.",
     "rodape.aviso": "This site is informational and does not replace professional care.",
+    "rodape.credito": "Site by",
 
     /* --- floating buttons ------------------------------------------------ */
     "zap.aria": "Message me on WhatsApp",

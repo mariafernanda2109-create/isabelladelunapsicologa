@@ -1188,6 +1188,29 @@ body::after {
   opacity: .7;
 }
 
+/* crédito de autoria: linha discreta, fechando o rodapé. O nome vai
+   sublinhado para se ler como link sem depender só da cor. */
+.rodape__credito {
+  margin-top: 1.375rem;
+  font-size: .75rem;
+  font-weight: 300;
+  text-align: center;
+  opacity: .75;
+}
+.rodape__credito a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: .1875rem;
+  text-decoration-thickness: 1px;
+  transition: opacity var(--rapido) var(--suave);
+}
+.rodape__credito a:hover { opacity: .8; }
+.rodape__credito a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: .1875rem;
+  border-radius: .125rem;
+}
+
 /* -------------------------------------------------- WHATSAPP FIXO --- */
 .zap-flutuante {
   position: fixed;
