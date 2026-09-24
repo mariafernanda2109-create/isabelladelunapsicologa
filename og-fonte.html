@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Fonte da og:image</title>
+<!--
+  Origem da assets/og-image.png (1200x630).
+
+  Não é página do site: existe só para gerar a imagem de compartilhamento
+  com as fontes reais (DM Serif Display e Manrope), que não estão
+  instaladas no sistema. Fica fora do deploy pelo .vercelignore.
+
+  Para regerar: sirva a pasta, abra em 1200x630, capture a tela, salve em
+  assets/og-image.png.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+
+  .cartao {
+    position: relative;
+    width: 1200px;
+    height: 630px;
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    padding: 0 88px;
+    background: #9E2027;
+    color: #F7E4C4;
+    overflow: hidden;
+  }
+
+  /* mesma textura de linhas do hero, na mesma opacidade baixa */
+  .textura {
+    position: absolute;
+    inset: 0;
+    background: url("assets/linhas-creme.png") center / cover no-repeat;
+    opacity: .13;
+  }
+
+  .texto { position: relative; z-index: 1; flex: 1; }
+
+  .rotulo {
+    font-family: Manrope, sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: .19em;
+    text-transform: uppercase;
+    color: #EFD9B6;
+  }
+
+  .nome {
+    margin-top: 22px;
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 92px;
+    line-height: 1.02;
+    letter-spacing: -.018em;
+  }
+
+  .servicos {
+    margin-top: 26px;
+    font-family: Manrope, sans-serif;
+    font-size: 26px;
+    font-weight: 300;
+    line-height: 1.45;
+    color: #EFD9B6;
+    max-width: 19ch;
+  }
+
+  .base {
+    margin-top: 38px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(247, 228, 196, .32);
+    font-family: Manrope, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: .05em;
+    color: #EFD9B6;
+  }
+
+  .arte { position: relative; z-index: 1; flex: none; }
+  .arte img { width: 330px; height: auto; display: block; }
+</style>
+</head>
+<body>
+  <div class="cartao">
+    <div class="textura"></div>
+
+    <div class="texto">
+      <p class="rotulo">Psicóloga &middot; CRP 02/29244</p>
+      <p class="nome">Isabella de Luna</p>
+      <p class="servicos">Psicoterapia, psicoterapia breve e avaliação psicológica.</p>
+      <p class="base">Recife (PE) e online &middot; Português e inglês</p>
+    </div>
+
+    <div class="arte">
+      <img src="assets/coracao-creme.png" alt="">
+    </div>
+  </div>
+</body>
+</html>

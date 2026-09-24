@@ -4,3 +4,6 @@ assets/originais/
 
 # Script que gera os assets — roda na sua máquina, não no site.
 gerar-assets.py
+
+# Fonte da og:image: renderiza a imagem, nao e pagina do site.
+og-fonte.html
