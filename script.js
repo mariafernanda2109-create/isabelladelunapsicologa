@@ -23,7 +23,7 @@ const CONFIG = {
   // Datas da última revisão dos documentos, no formato AAAA-MM-DD.
   // Escreva só os números: o site formata sozinho conforme o idioma
   // ("8 de setembro de 2026" em português, "September 8, 2026" em inglês).
-  dataPolitica: "2026-09-08",
+  dataPolitica: "2026-09-24",
   dataTermos: "2026-09-24"
 };
 
