@@ -73,16 +73,22 @@
     color: var(--vermelho);
   }
   /* O aviso de emergência precisa ser encontrado por quem está em crise e
-     não vai ler o documento inteiro. Por isso destaque, não corpo de texto. */
+     não vai ler o documento inteiro. Segue o idioma do .detalhe do site —
+     filete, não cartão — com respiro maior para pesar mais na página. */
   .urgencia {
-    margin: 2.5rem 0;
-    padding: 1.5rem 1.75rem;
-    border-left: 3px solid var(--vermelho);
-    background: rgba(158, 32, 39, .07);
-    border-radius: .25rem;
+    margin: 2.75rem 0;
+    padding-block: 1.5rem;
+    border-top: 1px solid var(--vermelho);
+    border-bottom: 1px solid var(--vermelho);
   }
-  .urgencia p { color: var(--vinho); }
-  .urgencia strong { font-weight: 600; }
+  .urgencia p {
+    color: var(--vinho);
+    font-weight: 400;
+  }
+  .urgencia strong {
+    font-weight: 600;
+    color: var(--vermelho);
+  }
 </style>
 </head>
 
