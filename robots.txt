@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Política e Termos saem do índice pela meta robots="noindex" das próprias
+# páginas, não por Disallow: o robô precisa poder ler a página para ver a meta.
+
+Sitemap: https://isabelladelunapsicologa.com.br/sitemap.xml

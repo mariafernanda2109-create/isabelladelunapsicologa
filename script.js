@@ -20,10 +20,11 @@ const CONFIG = {
   mensagemPadrao:
     "Olá, Isabella! Encontrei seu site e gostaria de saber mais sobre o atendimento psicológico.",
 
-  // Data da última revisão da Política de Privacidade, no formato AAAA-MM-DD.
+  // Datas da última revisão dos documentos, no formato AAAA-MM-DD.
   // Escreva só os números: o site formata sozinho conforme o idioma
   // ("8 de setembro de 2026" em português, "September 8, 2026" em inglês).
-  dataPolitica: "2026-09-08"
+  dataPolitica: "2026-09-08",
+  dataTermos: "2026-09-24"
 };
 
 /* ===================================================================== */
@@ -40,10 +41,12 @@ const CONFIG = {
     dataPolitica: "[inserir data]"
   };
 
-  /* A data da política é guardada em ISO e escrita por extenso conforme o
-     idioma. Fica exposta porque o i18n.js reformata a cada troca. */
-  function formatarDataPolitica(idioma) {
-    const iso = (CONFIG.dataPolitica || "").trim();
+  /* Campos do CONFIG guardados em ISO e escritos por extenso conforme o
+     idioma. Exposto porque o i18n.js reformata a cada troca. */
+  const CHAVES_DATA = ["dataPolitica", "dataTermos"];
+
+  function formatarData(chave, idioma) {
+    const iso = (CONFIG[chave] || "").trim();
     if (!iso) return "";
     // sem "Z": assim a data é lida no fuso local e não volta um dia
     const data = new Date(iso + "T00:00:00");
@@ -52,12 +55,13 @@ const CONFIG = {
       { day: "numeric", month: "long", year: "numeric" });
   }
 
-  window.formatarDataPolitica = formatarDataPolitica;
+  window.formatarData = formatarData;
+  window.CHAVES_DATA = CHAVES_DATA;
 
   $$("[data-cfg]").forEach((el) => {
     const chave = el.dataset.cfg;
-    const valor = chave === "dataPolitica"
-      ? formatarDataPolitica("pt")
+    const valor = CHAVES_DATA.indexOf(chave) !== -1
+      ? formatarData(chave, "pt")
       : (CONFIG[chave] || "").trim();
     el.textContent = valor || ROTULOS[chave] || "";
     if (!valor) el.classList.add("pendente");

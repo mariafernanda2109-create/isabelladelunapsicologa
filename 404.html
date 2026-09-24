@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Mesmo bloco anti-flash das outras páginas. -->
+<script>
+(function () {
+  try {
+    if (localStorage.getItem("isabella-idioma") === "en") {
+      document.documentElement.lang = "en";
+      document.documentElement.setAttribute("data-i18n-pendente", "");
+      setTimeout(function () {
+        document.documentElement.removeAttribute("data-i18n-pendente");
+      }, 1200);
+    }
+  } catch (e) {}
+})();
+</script>
+<style>html[data-i18n-pendente] body { visibility: hidden; }</style>
+
+<title>Página não encontrada | Isabella de Luna</title>
+<meta name="description" content="A página que você procura não existe ou mudou de endereço.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#9E2027">
+
+<link rel="icon" href="/assets/favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v=13">
+
+<style>
+  /* Todos os caminhos aqui saem da raiz: o erro pode acontecer em
+     qualquer profundidade de URL, e caminho relativo quebraria. */
+  .erro {
+    display: flex;
+    align-items: center;
+    min-height: 100svh;
+    padding-block: calc(var(--altura-header) + 3rem) 4rem;
+    background: var(--vermelho);
+    color: var(--creme);
+    text-align: center;
+  }
+  .erro__codigo {
+    font-family: var(--serif);
+    font-size: clamp(4.5rem, 14vw, 9rem);
+    line-height: 1;
+    letter-spacing: -.02em;
+    opacity: .32;
+  }
+  .erro__titulo {
+    margin-top: .5rem;
+    font-family: var(--serif);
+    font-size: clamp(1.75rem, 1.2rem + 2.4vw, 2.75rem);
+    line-height: 1.15;
+  }
+  .erro__texto {
+    margin: 1.125rem auto 0;
+    max-width: 44ch;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--tinta-clara);
+  }
+  .erro__acoes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2.25rem;
+  }
+</style>
+</head>
+
+<body data-i18n-titulo="meta.titulo404" data-i18n-descricao="meta.descricao404">
+<a class="pular" href="#conteudo" data-i18n="geral.pular">Pular para o conteúdo</a>
+
+<header class="cabecalho">
+  <div class="cabecalho__interno">
+    <a class="marca" href="/" aria-label="Isabella de Luna, Psicóloga — ir para o início"
+       data-i18n-attr="aria-label:marca.aria">
+      <span class="marca__simbolo">
+        <img class="marca__creme" src="/assets/coracao-creme.png" alt="" width="832" height="1072">
+        <img class="marca__vermelho" src="/assets/coracao-vermelho.png" alt="" width="832" height="1072">
+      </span>
+      <span class="marca__texto">
+        <span class="marca__nome">Isabella de Luna</span>
+        <span class="marca__papel" data-i18n="marca.papel">Psicóloga</span>
+      </span>
+    </a>
+
+    <div class="idioma" role="group" aria-label="Selecionar idioma"
+         data-i18n-attr="aria-label:idioma.aria">
+      <button type="button" class="idioma__opcao idioma__opcao--ativo" data-idioma="pt"
+              aria-pressed="true" lang="pt-BR">PT</button>
+      <span class="idioma__sep" aria-hidden="true">|</span>
+      <button type="button" class="idioma__opcao" data-idioma="en"
+              aria-pressed="false" lang="en">EN</button>
+    </div>
+  </div>
+</header>
+
+<main class="erro" id="conteudo">
+  <div class="textura textura--creme" aria-hidden="true"></div>
+
+  <div class="interno">
+    <p class="erro__codigo" aria-hidden="true">404</p>
+    <h1 class="erro__titulo" data-i18n="erro404.titulo">Esta página não existe.</h1>
+    <p class="erro__texto" data-i18n="erro404.texto">
+      O endereço pode ter mudado, ou o link que te trouxe até aqui pode estar
+      incompleto. Nada se perdeu — é só voltar.
+    </p>
+
+    <div class="erro__acoes">
+      <a class="botao botao--claro" href="/">
+        <span class="botao__texto" data-i18n-html="erro404.inicio">Voltar ao início <span class="seta" aria-hidden="true">→</span></span>
+      </a>
+      <a class="botao botao--zap" data-wa href="/#contato">
+        <svg class="icone-zap" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#zap"/></svg>
+        <span class="botao__texto" data-i18n-html="erro404.falar">Falar pelo WhatsApp <span class="seta" aria-hidden="true">→</span></span>
+      </a>
+    </div>
+  </div>
+</main>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="zap" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.13-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.53.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.41-.56-.42h-.47c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.22-.17-.47-.29Z"/></symbol>
+</svg>
+
+<script src="/script.js?v=5" defer></script>
+<script src="/i18n.js?v=6" defer></script>
+</body>
+</html>

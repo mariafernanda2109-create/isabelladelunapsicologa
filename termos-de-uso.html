@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Mesmo bloco anti-flash das outras páginas. -->
+<script>
+(function () {
+  try {
+    if (localStorage.getItem("isabella-idioma") === "en") {
+      document.documentElement.lang = "en";
+      document.documentElement.setAttribute("data-i18n-pendente", "");
+      setTimeout(function () {
+        document.documentElement.removeAttribute("data-i18n-pendente");
+      }, 1200);
+    }
+  } catch (e) {}
+})();
+</script>
+<style>html[data-i18n-pendente] body { visibility: hidden; }</style>
+
+<title>Termos de Uso | Isabella de Luna</title>
+<meta name="description" content="Termos de Uso do site de Isabella de Luna, psicóloga.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#9E2027">
+
+<link rel="icon" href="assets/favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=13">
+
+<style>
+  .documento { padding-block: calc(var(--altura-header) + 4rem) clamp(4rem, 8vw, 6rem); }
+  .documento .interno { max-width: 780px; }
+  .documento h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.125rem, 1.5rem + 3vw, 3.25rem);
+    line-height: 1.1;
+    letter-spacing: -.018em;
+    color: var(--vinho);
+  }
+  .documento h2 {
+    margin: clamp(2.5rem, 5vw, 3.5rem) 0 1rem;
+    font-family: var(--serif);
+    font-size: clamp(1.375rem, 1.2rem + .9vw, 1.75rem);
+    line-height: 1.2;
+    color: var(--vinho);
+  }
+  .documento p,
+  .documento li {
+    font-weight: 300;
+    color: var(--tinta-suave);
+    line-height: 1.75;
+  }
+  .documento p + p { margin-top: 1.1rem; }
+  .documento ul {
+    margin-top: 1.1rem;
+    padding-left: 1.2rem;
+    list-style: disc;
+  }
+  .documento li { margin-bottom: .6rem; }
+  .documento .voltar { margin-bottom: 2.5rem; }
+  .documento .atualizacao {
+    margin-top: .75rem;
+    font-size: .8125rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--vermelho);
+  }
+  /* O aviso de emergência precisa ser encontrado por quem está em crise e
+     não vai ler o documento inteiro. Por isso destaque, não corpo de texto. */
+  .urgencia {
+    margin: 2.5rem 0;
+    padding: 1.5rem 1.75rem;
+    border-left: 3px solid var(--vermelho);
+    background: rgba(158, 32, 39, .07);
+    border-radius: .25rem;
+  }
+  .urgencia p { color: var(--vinho); }
+  .urgencia strong { font-weight: 600; }
+</style>
+</head>
+
+<body data-i18n-titulo="meta.tituloTermos" data-i18n-descricao="meta.descricaoTermos">
+<a class="pular" href="#conteudo" data-i18n="geral.pular">Pular para o conteúdo</a>
+
+<header class="cabecalho cabecalho--fixo">
+  <div class="cabecalho__interno">
+    <a class="marca" href="index.html" aria-label="Isabella de Luna, Psicóloga — ir para o início"
+       data-i18n-attr="aria-label:marca.aria">
+      <span class="marca__simbolo">
+        <img class="marca__creme" src="assets/coracao-creme.png" alt="" width="832" height="1072">
+        <img class="marca__vermelho" src="assets/coracao-vermelho.png" alt="" width="832" height="1072">
+      </span>
+      <span class="marca__texto">
+        <span class="marca__nome">Isabella de Luna</span>
+        <span class="marca__papel" data-i18n="marca.papel">Psicóloga</span>
+      </span>
+    </a>
+    <nav class="navegacao" aria-label="Navegação principal"
+         data-i18n-attr="aria-label:nav.aria">
+      <ul class="navegacao__lista">
+        <li><a href="index.html#sobre" data-i18n="nav.sobre">Sobre mim</a></li>
+        <li><a href="index.html#atendimentos" data-i18n="nav.atendimentos">Atendimentos</a></li>
+        <li><a href="index.html#faq" data-i18n="nav.faq">FAQ</a></li>
+      </ul>
+      <a class="botao botao--zap" data-wa href="index.html#contato">
+        <svg class="icone-zap" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#zap"/></svg>
+        WhatsApp
+      </a>
+    </nav>
+
+    <!-- Esta página não tem hambúrguer, e no mobile o .navegacao fica oculto.
+         Por isso o toggle mora fora do nav aqui: assim continua alcançável. -->
+    <div class="idioma" role="group" aria-label="Selecionar idioma"
+         data-i18n-attr="aria-label:idioma.aria">
+      <button type="button" class="idioma__opcao idioma__opcao--ativo" data-idioma="pt"
+              aria-pressed="true" lang="pt-BR">PT</button>
+      <span class="idioma__sep" aria-hidden="true">|</span>
+      <button type="button" class="idioma__opcao" data-idioma="en"
+              aria-pressed="false" lang="en">EN</button>
+    </div>
+  </div>
+</header>
+
+<main class="secao secao--claro documento" id="conteudo">
+  <div class="interno">
+
+    <p class="voltar"><a class="link-seta" href="index.html" style="margin-top:0"
+      data-i18n-html="pol.voltar"><span class="seta" aria-hidden="true">←</span> Voltar ao site</a></p>
+
+    <h1 data-i18n="termos.titulo">Termos de Uso</h1>
+    <p class="atualizacao"><span data-i18n="pol.atualizacao">Última atualização:</span> <span data-cfg="dataTermos"></span></p>
+
+    <h2 data-i18n="termos.h1">1. Sobre estes termos</h2>
+    <p data-i18n="termos.p1">
+      Este site é mantido por Isabella de Luna, psicóloga inscrita no CRP 02/29244. Ao
+      navegar por ele, você concorda com as condições descritas abaixo. Se não concordar
+      com algum ponto, recomenda-se não utilizar o site.
+    </p>
+
+    <h2 data-i18n="termos.h2">2. Finalidade do site</h2>
+    <p data-i18n="termos.p2">
+      O conteúdo aqui publicado tem caráter exclusivamente informativo: apresenta a
+      profissional, as modalidades de atendimento e as formas de contato. Nada neste site
+      constitui consulta, diagnóstico, tratamento ou orientação clínica individualizada, e
+      seu conteúdo não substitui o atendimento profissional.
+    </p>
+
+    <div class="urgencia">
+      <p data-i18n-html="termos.urgencia">
+        <strong>Em situação de urgência, não use este site.</strong> Se você está em
+        sofrimento intenso ou pensando em se machucar, ligue para o CVV no
+        <strong>188</strong> (gratuito, 24 horas), para o SAMU no <strong>192</strong>, ou
+        procure a emergência mais próxima.
+      </p>
+    </div>
+
+    <h2 data-i18n="termos.h3">3. Contato e agendamento</h2>
+    <p data-i18n="termos.p3">
+      Os botões de WhatsApp levam a uma conversa direta com a profissional. O envio de
+      mensagem não cria, por si só, vínculo terapêutico nem garante disponibilidade de
+      horário. As condições de cada atendimento — modalidade, frequência, duração e
+      valores — são tratadas diretamente com a profissional antes do início do
+      acompanhamento.
+    </p>
+
+    <h2 data-i18n="termos.h4">4. Sigilo e conduta profissional</h2>
+    <p data-i18n="termos.p4">
+      Os atendimentos seguem o Código de Ética Profissional do Psicólogo e as resoluções
+      do Conselho Federal de Psicologia. As informações compartilhadas em contexto de
+      atendimento são protegidas por sigilo profissional, observadas as hipóteses legais
+      de quebra.
+    </p>
+
+    <h2 data-i18n="termos.h5">5. Propriedade intelectual</h2>
+    <p data-i18n="termos.p5">
+      Os textos, a identidade visual, as fotografias e os demais elementos deste site
+      pertencem à sua titular e estão protegidos pela legislação de direitos autorais.
+      A reprodução, total ou parcial, depende de autorização prévia por escrito.
+    </p>
+
+    <h2 data-i18n="termos.h6">6. Links para outros sites</h2>
+    <p data-i18n="termos.p6">
+      Este site remete a serviços de terceiros, como WhatsApp, Instagram e Google Maps.
+      Esses serviços têm termos e políticas próprios, e a profissional não responde pelo
+      conteúdo, pela disponibilidade ou pelas práticas de privacidade deles.
+    </p>
+
+    <h2 data-i18n="termos.h7">7. Uso adequado</h2>
+    <p data-i18n="termos.p7">
+      Ao usar este site, você se compromete a não tentar comprometer seu funcionamento ou
+      sua segurança, não empregar meios automatizados para extrair conteúdo em massa e não
+      utilizar o material aqui publicado para fins ilícitos ou enganosos.
+    </p>
+
+    <h2 data-i18n="termos.h8">8. Disponibilidade e limitação de responsabilidade</h2>
+    <p data-i18n="termos.p8">
+      O site é oferecido no estado em que se encontra. Apesar do cuidado com a exatidão
+      das informações, não há garantia de funcionamento ininterrupto nem de ausência de
+      falhas. A profissional não responde por danos decorrentes de indisponibilidade
+      técnica ou do uso do conteúdo informativo em substituição ao atendimento.
+    </p>
+
+    <h2 data-i18n="termos.h9">9. Alterações destes termos</h2>
+    <p data-i18n="termos.p9">
+      Estes termos podem ser atualizados a qualquer momento. A data da última revisão está
+      indicada no início da página, e o uso do site após a alteração indica concordância
+      com a versão vigente.
+    </p>
+
+    <h2 data-i18n="termos.h10">10. Legislação e foro</h2>
+    <p data-i18n-html="termos.p10">
+      Estes termos são regidos pela legislação brasileira. Fica eleito o foro da comarca
+      de Recife (PE) para dirimir eventuais controvérsias. Para dúvidas sobre este
+      documento, escreva para
+      <a href="mailto:existiremcor.psi@gmail.com">existiremcor.psi@gmail.com</a>.
+    </p>
+
+    <p style="margin-top:3rem">
+      <a class="link-seta" href="index.html" style="margin-top:0"
+        data-i18n-html="pol.voltar"><span class="seta" aria-hidden="true">←</span> Voltar ao site</a>
+    </p>
+
+  </div>
+</main>
+
+<footer class="rodape">
+  <div class="interno rodape__base" style="margin-top:0;border-top:0;padding-top:0">
+    <p>&copy; <span id="ano"></span> <span data-i18n="rodape.direitos">Isabella de Luna. Todos os direitos reservados.</span></p>
+    <p data-i18n-html="rodape.papel">Psicóloga <span aria-hidden="true">·</span> CRP 02/29244</p>
+  </div>
+
+  <p class="interno rodape__credito">
+    <span data-i18n="rodape.credito">Site feito por</span>
+    <a href="https://www.instagram.com/maferrsantos/" target="_blank" rel="noopener noreferrer">Maria Fernanda</a>
+  </p>
+</footer>
+
+<div class="barra-zap">
+  <a class="barra-zap__botao" data-wa href="index.html#contato">
+    <svg class="icone-zap" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#zap"/></svg>
+    <span class="botao__texto" data-i18n-html="zap.barra">WhatsApp — Conversar comigo <span class="seta" aria-hidden="true">→</span></span>
+  </a>
+</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="zap" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.13-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.53.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.41-.56-.42h-.47c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.22-.17-.47-.29Z"/></symbol>
+</svg>
+
+<script src="script.js?v=5" defer></script>
+<script src="i18n.js?v=6" defer></script>
+</body>
+</html>

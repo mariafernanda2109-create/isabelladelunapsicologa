@@ -27,6 +27,10 @@ const I18N = {
     "meta.descricao": "Psicoterapia, psicoterapia breve e avaliação psicológica em Recife (PE) e online — em português e inglês — para o Brasil, para brasileiros no exterior e para estrangeiros.",
     "meta.tituloPolitica": "Política de Privacidade | Isabella de Luna",
     "meta.descricaoPolitica": "Política de Privacidade do site de Isabella de Luna, psicóloga.",
+    "meta.tituloTermos": "Termos de Uso | Isabella de Luna",
+    "meta.descricaoTermos": "Termos de Uso do site de Isabella de Luna, psicóloga.",
+    "meta.titulo404": "Página não encontrada | Isabella de Luna",
+    "meta.descricao404": "A página que você procura não existe ou mudou de endereço.",
 
     /* --- cabeçalho e navegação ------------------------------------- */
     "geral.pular": "Pular para o conteúdo",
@@ -224,7 +228,39 @@ const I18N = {
     "pol.p8": "As mensagens trocadas são mantidas pelo período necessário ao atendimento da finalidade que motivou o contato e ao cumprimento de obrigações legais e regulamentares aplicáveis à atividade profissional.",
     "pol.h9": "9. Alterações desta política",
     "pol.p9": "Esta política pode ser atualizada a qualquer momento. A data da última revisão está indicada no início da página.",
-    "pol.dataPendente": "[inserir data]"
+    "pol.dataPendente": "[inserir data]",
+
+    /* --- termos de uso ------------------------------------------------- */
+    "termos.titulo": "Termos de Uso",
+    "termos.h1": "1. Sobre estes termos",
+    "termos.p1": "Este site é mantido por Isabella de Luna, psicóloga inscrita no CRP 02/29244. Ao navegar por ele, você concorda com as condições descritas abaixo. Se não concordar com algum ponto, recomenda-se não utilizar o site.",
+    "termos.h2": "2. Finalidade do site",
+    "termos.p2": "O conteúdo aqui publicado tem caráter exclusivamente informativo: apresenta a profissional, as modalidades de atendimento e as formas de contato. Nada neste site constitui consulta, diagnóstico, tratamento ou orientação clínica individualizada, e seu conteúdo não substitui o atendimento profissional.",
+    "termos.urgencia": "<strong>Em situação de urgência, não use este site.</strong> Se você está em sofrimento intenso ou pensando em se machucar, ligue para o CVV no <strong>188</strong> (gratuito, 24 horas), para o SAMU no <strong>192</strong>, ou procure a emergência mais próxima.",
+    "termos.h3": "3. Contato e agendamento",
+    "termos.p3": "Os botões de WhatsApp levam a uma conversa direta com a profissional. O envio de mensagem não cria, por si só, vínculo terapêutico nem garante disponibilidade de horário. As condições de cada atendimento — modalidade, frequência, duração e valores — são tratadas diretamente com a profissional antes do início do acompanhamento.",
+    "termos.h4": "4. Sigilo e conduta profissional",
+    "termos.p4": "Os atendimentos seguem o Código de Ética Profissional do Psicólogo e as resoluções do Conselho Federal de Psicologia. As informações compartilhadas em contexto de atendimento são protegidas por sigilo profissional, observadas as hipóteses legais de quebra.",
+    "termos.h5": "5. Propriedade intelectual",
+    "termos.p5": "Os textos, a identidade visual, as fotografias e os demais elementos deste site pertencem à sua titular e estão protegidos pela legislação de direitos autorais. A reprodução, total ou parcial, depende de autorização prévia por escrito.",
+    "termos.h6": "6. Links para outros sites",
+    "termos.p6": "Este site remete a serviços de terceiros, como WhatsApp, Instagram e Google Maps. Esses serviços têm termos e políticas próprios, e a profissional não responde pelo conteúdo, pela disponibilidade ou pelas práticas de privacidade deles.",
+    "termos.h7": "7. Uso adequado",
+    "termos.p7": "Ao usar este site, você se compromete a não tentar comprometer seu funcionamento ou sua segurança, não empregar meios automatizados para extrair conteúdo em massa e não utilizar o material aqui publicado para fins ilícitos ou enganosos.",
+    "termos.h8": "8. Disponibilidade e limitação de responsabilidade",
+    "termos.p8": "O site é oferecido no estado em que se encontra. Apesar do cuidado com a exatidão das informações, não há garantia de funcionamento ininterrupto nem de ausência de falhas. A profissional não responde por danos decorrentes de indisponibilidade técnica ou do uso do conteúdo informativo em substituição ao atendimento.",
+    "termos.h9": "9. Alterações destes termos",
+    "termos.p9": "Estes termos podem ser atualizados a qualquer momento. A data da última revisão está indicada no início da página, e o uso do site após a alteração indica concordância com a versão vigente.",
+    "termos.h10": "10. Legislação e foro",
+    "termos.p10": "Estes termos são regidos pela legislação brasileira. Fica eleito o foro da comarca de Recife (PE) para dirimir eventuais controvérsias. Para dúvidas sobre este documento, escreva para <a href=\"mailto:existiremcor.psi@gmail.com\">existiremcor.psi@gmail.com</a>.",
+
+    /* --- página 404 ---------------------------------------------------- */
+    "erro404.titulo": "Esta página não existe.",
+    "erro404.texto": "O endereço pode ter mudado, ou o link que te trouxe até aqui pode estar incompleto. Nada se perdeu — é só voltar.",
+    "erro404.inicio": "Voltar ao início <span class=\"seta\" aria-hidden=\"true\">→</span>",
+    "erro404.falar": "Falar pelo WhatsApp <span class=\"seta\" aria-hidden=\"true\">→</span>",
+
+    "rodape.termos": "Termos de Uso"
   },
 
   /* =================================================================== */
@@ -236,6 +272,10 @@ const I18N = {
     "meta.descricao": "Therapy, short-term therapy and psychological assessment in Recife, Brazil and online — in English and Portuguese — for Brazilians abroad and for English speakers.",
     "meta.tituloPolitica": "Privacy Policy | Isabella de Luna",
     "meta.descricaoPolitica": "Privacy Policy for the website of Isabella de Luna, psychologist.",
+    "meta.tituloTermos": "Terms of Use | Isabella de Luna",
+    "meta.descricaoTermos": "Terms of Use for the website of Isabella de Luna, psychologist.",
+    "meta.titulo404": "Page not found | Isabella de Luna",
+    "meta.descricao404": "The page you are looking for does not exist or has moved.",
 
     /* --- header and navigation -------------------------------------- */
     "geral.pular": "Skip to content",
@@ -433,7 +473,39 @@ const I18N = {
     "pol.p8": "Messages exchanged are kept for as long as needed to fulfil the purpose that prompted the contact and to meet the legal and regulatory obligations applicable to the profession.",
     "pol.h9": "9. Changes to this policy",
     "pol.p9": "This policy may be updated at any time. The date of the latest revision is shown at the top of the page.",
-    "pol.dataPendente": "[insert date]"
+    "pol.dataPendente": "[insert date]",
+
+    /* --- terms of use --------------------------------------------------- */
+    "termos.titulo": "Terms of Use",
+    "termos.h1": "1. About these terms",
+    "termos.p1": "This site is maintained by Isabella de Luna, a psychologist registered under CRP 02/29244. By browsing it, you agree to the conditions below. If you disagree with any of them, we recommend not using the site.",
+    "termos.h2": "2. What this site is for",
+    "termos.p2": "The content published here is strictly informational: it introduces the psychologist, the session formats and the ways to get in touch. Nothing on this site amounts to a consultation, diagnosis, treatment or individual clinical guidance, and it does not replace professional care.",
+    "termos.urgencia": "<strong>In an emergency, do not use this site.</strong> If you are in severe distress or thinking about hurting yourself, call CVV at <strong>188</strong> (free, 24 hours) or SAMU at <strong>192</strong> in Brazil, or go to the nearest emergency room. Outside Brazil, call your local emergency number.",
+    "termos.h3": "3. Contact and scheduling",
+    "termos.p3": "The WhatsApp buttons open a direct conversation with the psychologist. Sending a message does not in itself create a therapeutic relationship or guarantee an available time slot. The conditions of each engagement — format, frequency, duration and fees — are agreed directly with the psychologist before the work begins.",
+    "termos.h4": "4. Confidentiality and professional conduct",
+    "termos.p4": "Sessions follow the Brazilian Code of Professional Ethics for Psychologists and the resolutions of the Federal Council of Psychology. Information shared in the context of care is protected by professional confidentiality, subject to the legal grounds for disclosure.",
+    "termos.h5": "5. Intellectual property",
+    "termos.p5": "The texts, visual identity, photographs and other elements of this site belong to its owner and are protected by copyright law. Reproduction, in whole or in part, requires prior written permission.",
+    "termos.h6": "6. Links to other sites",
+    "termos.p6": "This site links to third-party services such as WhatsApp, Instagram and Google Maps. Those services have their own terms and policies, and the psychologist is not responsible for their content, availability or privacy practices.",
+    "termos.h7": "7. Acceptable use",
+    "termos.p7": "By using this site, you agree not to attempt to compromise its operation or security, not to use automated means to extract content in bulk, and not to use the material published here for unlawful or misleading purposes.",
+    "termos.h8": "8. Availability and limitation of liability",
+    "termos.p8": "The site is provided as is. Despite care taken with the accuracy of the information, there is no guarantee of uninterrupted operation or freedom from faults. The psychologist is not liable for damages arising from technical unavailability or from using the informational content in place of actual care.",
+    "termos.h9": "9. Changes to these terms",
+    "termos.p9": "These terms may be updated at any time. The date of the latest revision is shown at the top of the page, and continued use of the site after a change indicates agreement with the version in force.",
+    "termos.h10": "10. Governing law and jurisdiction",
+    "termos.p10": "These terms are governed by Brazilian law. The courts of Recife (PE), Brazil, are the agreed venue for any dispute. For questions about this document, write to <a href=\"mailto:existiremcor.psi@gmail.com\">existiremcor.psi@gmail.com</a>.",
+
+    /* --- 404 page -------------------------------------------------------- */
+    "erro404.titulo": "This page doesn't exist.",
+    "erro404.texto": "The address may have changed, or the link that brought you here may be incomplete. Nothing is lost — just head back.",
+    "erro404.inicio": "Back to home <span class=\"seta\" aria-hidden=\"true\">→</span>",
+    "erro404.falar": "Message me on WhatsApp <span class=\"seta\" aria-hidden=\"true\">→</span>",
+
+    "rodape.termos": "Terms of Use"
   }
 };
 
@@ -523,13 +595,15 @@ const I18N = {
       window.atualizarLinksWhatsApp(dic["wa.padrao"]);
     }
 
-    // a data da política é escrita por extenso no idioma ativo
-    document.querySelectorAll('[data-cfg="dataPolitica"]').forEach((el) => {
-      const formatada = typeof window.formatarDataPolitica === "function"
-        ? window.formatarDataPolitica(idioma)
-        : "";
-      el.textContent = formatada || dic["pol.dataPendente"];
-      el.classList.toggle("pendente", !formatada);
+    // as datas dos documentos são escritas por extenso no idioma ativo
+    (window.CHAVES_DATA || []).forEach((chave) => {
+      document.querySelectorAll('[data-cfg="' + chave + '"]').forEach((el) => {
+        const formatada = typeof window.formatarData === "function"
+          ? window.formatarData(chave, idioma)
+          : "";
+        el.textContent = formatada || dic["pol.dataPendente"];
+        el.classList.toggle("pendente", !formatada);
+      });
     });
 
     window.IDIOMA_ATUAL = idioma;
