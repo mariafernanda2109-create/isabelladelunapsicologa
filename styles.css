@@ -68,6 +68,12 @@ body {
 img, svg { display: block; max-width: 100%; }
 img { height: auto; }
 
+/* O <picture> existe só para oferecer o WebP ao navegador; não deve gerar
+   caixa nenhuma, para que o <img> continue sendo filho direto do pai no
+   layout e as regras já escritas (posicionamento absoluto, grid, flex)
+   sigam valendo sem mudança. */
+picture { display: contents; }
+
 h1, h2, h3, h4 { margin: 0; font-weight: 400; }
 p  { margin: 0; }
 ul, ol { margin: 0; padding: 0; list-style: none; }
@@ -153,8 +159,20 @@ body::after {
   background-size: cover;
   opacity: .12;
 }
-.textura--creme    { background-image: url("assets/linhas-creme.png"); }
-.textura--vermelho { background-image: url("assets/linhas-vermelho.png"); opacity: .065; }
+/* Cada textura declara o PNG primeiro e o image-set() depois: o navegador que
+   entende image-set() pega o WebP; o que não entende ignora a segunda linha e
+   fica com o PNG. */
+.textura--creme {
+  background-image: url("assets/linhas-creme.png");
+  background-image: image-set(url("assets/linhas-creme.webp") type("image/webp"),
+                              url("assets/linhas-creme.png")  type("image/png"));
+}
+.textura--vermelho {
+  opacity: .065;
+  background-image: url("assets/linhas-vermelho.png");
+  background-image: image-set(url("assets/linhas-vermelho.webp") type("image/webp"),
+                              url("assets/linhas-vermelho.png")  type("image/png"));
+}
 .textura--canto {
   inset: auto -18% -25% auto;
   width: min(42.5rem, 70%);
@@ -738,6 +756,8 @@ body::after {
   width: clamp(8.75rem, 16vw, 14.375rem);
   aspect-ratio: 1;
   background: url("assets/linhas-vermelho.png") center / contain no-repeat;
+  background-image: image-set(url("assets/linhas-vermelho.webp") type("image/webp"),
+                              url("assets/linhas-vermelho.png")  type("image/png"));
   opacity: .1;
   pointer-events: none;
   transition: opacity var(--lento) var(--suave), transform var(--lento) var(--suave);
@@ -1080,20 +1100,26 @@ body::after {
 .acordeao__icone::after { transform: rotate(90deg); }
 .acordeao__gatilho[aria-expanded="true"] .acordeao__icone::after { transform: rotate(0deg); }
 
+/* A altura sai de uma faixa de grid, não de max-height: assim a abertura usa a
+   altura real da resposta, sem teto fixo, e o JavaScript não precisa medir
+   scrollHeight nem reescrever a medida a cada redimensionamento.
+   Navegador que não interpola grid-template-rows abre e fecha sem transição;
+   o conteúdo continua correto. */
 .acordeao__painel {
-  max-height: 0;
-  overflow: hidden;
+  display: grid;
+  grid-template-rows: 0fr;
   visibility: hidden;
-  transition: max-height var(--medio) var(--suave),
+  opacity: 0;
+  transition: grid-template-rows var(--medio) var(--suave),
               visibility 0s linear var(--medio),
               opacity var(--medio) var(--suave);
-  opacity: 0;
 }
+.acordeao__conteudo { overflow: hidden; }
 .acordeao__painel.aberto {
-  max-height: 44rem;
+  grid-template-rows: 1fr;
   visibility: visible;
   opacity: 1;
-  transition: max-height var(--medio) var(--suave),
+  transition: grid-template-rows var(--medio) var(--suave),
               visibility 0s,
               opacity var(--medio) var(--suave);
 }

@@ -182,18 +182,11 @@ const CONFIG = {
         const alvo = document.getElementById(outro.getAttribute("aria-controls"));
         outro.setAttribute("aria-expanded", "false");
         alvo.classList.remove("aberto");
-        alvo.style.maxHeight = "0px";
       });
 
       gatilho.setAttribute("aria-expanded", String(abrindo));
       painel.classList.toggle("aberto", abrindo);
-      painel.style.maxHeight = abrindo ? painel.scrollHeight + "px" : "0px";
     });
-  });
-
-  window.addEventListener("resize", () => {
-    const aberto = $(".acordeao__painel.aberto");
-    if (aberto) aberto.style.maxHeight = aberto.scrollHeight + "px";
   });
 
   /* ------------------------------------------------------- filtros FAQ */
@@ -223,7 +216,6 @@ const CONFIG = {
             const painel = document.getElementById(gatilho.getAttribute("aria-controls"));
             gatilho.setAttribute("aria-expanded", "false");
             painel.classList.remove("aberto");
-            painel.style.maxHeight = "0px";
           });
         });
       });

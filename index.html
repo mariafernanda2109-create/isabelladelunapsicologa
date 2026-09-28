@@ -50,14 +50,19 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="assets/coracao-creme.png">
+<!-- type="image/webp" faz o navegador sem suporte simplesmente ignorar o
+     preload; ele busca o PNG do <picture> na hora normal. -->
+<link rel="preload" as="image" href="assets/coracao-creme.webp" type="image/webp">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=13">
+<link rel="stylesheet" href="styles.css?v=14">
 
 <noscript><style>
   /* Sem JavaScript: nada fica escondido. */
   .reveal { opacity: 1 !important; transform: none !important; }
-  .acordeao__painel[hidden] { display: block; }
+  .acordeao__painel[hidden] {
+    display: grid; grid-template-rows: 1fr;
+    visibility: visible; opacity: 1;
+  }
   .acordeao__icone { display: none; }
 </style></noscript>
 
@@ -112,8 +117,14 @@
     <a class="marca" href="#topo" aria-label="Isabella de Luna, Psicóloga — ir para o início"
        data-i18n-attr="aria-label:marca.aria">
       <span class="marca__simbolo">
-        <img class="marca__creme" src="assets/coracao-creme.png" alt="" width="832" height="1072">
-        <img class="marca__vermelho" src="assets/coracao-vermelho.png" alt="" width="832" height="1072">
+        <picture>
+          <source type="image/webp" srcset="assets/coracao-creme.webp">
+          <img class="marca__creme" src="assets/coracao-creme.png" alt="" width="832" height="1072">
+        </picture>
+        <picture>
+          <source type="image/webp" srcset="assets/coracao-vermelho.webp">
+          <img class="marca__vermelho" src="assets/coracao-vermelho.png" alt="" width="832" height="1072">
+        </picture>
       </span>
       <span class="marca__texto">
         <span class="marca__nome">Isabella de Luna</span>
@@ -179,10 +190,13 @@
     </div>
 
     <div class="hero__arte reveal reveal--marca" style="--atraso:120ms">
-      <img class="coracao coracao--hero" src="assets/coracao-creme.png"
+      <picture>
+        <source type="image/webp" srcset="assets/coracao-creme.webp">
+        <img class="coracao coracao--hero" src="assets/coracao-creme.png"
            data-i18n-attr="alt:hero.alt"
            alt="Símbolo da marca Isabella de Luna: um coração anatômico atravessado por linhas contínuas."
            width="832" height="1072" fetchpriority="high" decoding="async">
+      </picture>
     </div>
   </div>
 </section>
@@ -205,12 +219,15 @@
   <div class="interno sobre__grade">
 
     <figure class="foto reveal">
-      <img src="assets/isabella.jpg?v=2"
+      <picture>
+        <source type="image/webp" srcset="assets/isabella-small.webp 420w, assets/isabella.webp 525w" sizes="(max-width: 900px) 86vw, 38vw">
+        <img src="assets/isabella.jpg?v=2"
            srcset="assets/isabella-small.jpg?v=2 420w, assets/isabella.jpg?v=2 525w"
            sizes="(max-width: 900px) 86vw, 38vw"
            data-i18n-attr="alt:sobre.alt"
            alt="Retrato de Isabella de Luna, psicóloga."
            width="525" height="1072" loading="lazy" decoding="async">
+      </picture>
     </figure>
 
     <div class="sobre__texto">
@@ -462,7 +479,10 @@
 <!-- =============================== EXTERIOR ============================= -->
 <section class="secao secao--vermelho exterior" id="exterior">
   <div class="textura textura--creme" aria-hidden="true"></div>
-  <img class="coracao coracao--fundo" src="assets/coracao-creme.png" alt="" width="832" height="1072" loading="lazy" decoding="async">
+  <picture>
+    <source type="image/webp" srcset="assets/coracao-creme.webp">
+    <img class="coracao coracao--fundo" src="assets/coracao-creme.png" alt="" width="832" height="1072" loading="lazy" decoding="async">
+  </picture>
 
   <div class="interno">
     <p class="rotulo reveal" data-i18n="exterior.rotulo">Brasileiros no exterior e estrangeiros</p>
@@ -523,7 +543,9 @@
               <span class="acordeao__icone" aria-hidden="true"></span>
             </button></h4>
             <div class="acordeao__painel" id="faq-1" role="region" aria-labelledby="faq-1-btn" hidden>
-              <p data-i18n="faq.a1">Não! Na psicoterapia existem muitas possibilidades de como conduzir uma sessão eficaz mesmo que você não saiba ao certo por onde começar.</p>
+              <div class="acordeao__conteudo">
+                <p data-i18n="faq.a1">Não! Na psicoterapia existem muitas possibilidades de como conduzir uma sessão eficaz mesmo que você não saiba ao certo por onde começar.</p>
+              </div>
             </div>
           </div>
 
@@ -533,7 +555,9 @@
               <span class="acordeao__icone" aria-hidden="true"></span>
             </button></h4>
             <div class="acordeao__painel" id="faq-2" role="region" aria-labelledby="faq-2-btn" hidden>
-              <p data-i18n="faq.a2">A avaliação psicológica tem um número de sessões definido e o objetivo de chegar a um possível diagnóstico. A psicoterapia não tem prazo fixo e tem como foco autoconhecimento, desenvolvimento pessoal e melhora na qualidade de vida do paciente.</p>
+              <div class="acordeao__conteudo">
+                <p data-i18n="faq.a2">A avaliação psicológica tem um número de sessões definido e o objetivo de chegar a um possível diagnóstico. A psicoterapia não tem prazo fixo e tem como foco autoconhecimento, desenvolvimento pessoal e melhora na qualidade de vida do paciente.</p>
+              </div>
             </div>
           </div>
 
@@ -543,7 +567,9 @@
               <span class="acordeao__icone" aria-hidden="true"></span>
             </button></h4>
             <div class="acordeao__painel" id="faq-3" role="region" aria-labelledby="faq-3-btn" hidden>
-              <p data-i18n="faq.a3">As sessões têm duração aproximada de 45 minutos.</p>
+              <div class="acordeao__conteudo">
+                <p data-i18n="faq.a3">As sessões têm duração aproximada de 45 minutos.</p>
+              </div>
             </div>
           </div>
 
@@ -553,7 +579,9 @@
               <span class="acordeao__icone" aria-hidden="true"></span>
             </button></h4>
             <div class="acordeao__painel" id="faq-4" role="region" aria-labelledby="faq-4-btn" hidden>
-              <p data-i18n="faq.a4">A frequência é definida considerando a demanda, os objetivos do acompanhamento e a avaliação profissional.</p>
+              <div class="acordeao__conteudo">
+                <p data-i18n="faq.a4">A frequência é definida considerando a demanda, os objetivos do acompanhamento e a avaliação profissional.</p>
+              </div>
             </div>
           </div>
 
@@ -563,7 +591,9 @@
               <span class="acordeao__icone" aria-hidden="true"></span>
             </button></h4>
             <div class="acordeao__painel" id="faq-5" role="region" aria-labelledby="faq-5-btn" hidden>
-              <p data-i18n="faq.a5">Clique no botão de WhatsApp e envie uma mensagem. Você receberá as informações sobre disponibilidade, modalidade e próximos passos.</p>
+              <div class="acordeao__conteudo">
+                <p data-i18n="faq.a5">Clique no botão de WhatsApp e envie uma mensagem. Você receberá as informações sobre disponibilidade, modalidade e próximos passos.</p>
+              </div>
             </div>
           </div>
 
@@ -580,8 +610,10 @@
               <span class="acordeao__icone" aria-hidden="true"></span>
             </button></h4>
             <div class="acordeao__painel" id="faq-6" role="region" aria-labelledby="faq-6-btn" hidden>
-              <p data-i18n="faq.a6a">Diferente do acompanhamento tradicional, ela parte de uma queixa específica e trabalha para que você possa compreendê-la, ressignificá-la e encontrar novos caminhos.</p>
-              <p data-i18n="faq.a6b">O serviço pode ser contratado como uma porta de entrada para quem se encontra com alguma dificuldade de engajar na psicoterapia no momento, mas deseja um suporte qualificado.</p>
+              <div class="acordeao__conteudo">
+                <p data-i18n="faq.a6a">Diferente do acompanhamento tradicional, ela parte de uma queixa específica e trabalha para que você possa compreendê-la, ressignificá-la e encontrar novos caminhos.</p>
+                <p data-i18n="faq.a6b">O serviço pode ser contratado como uma porta de entrada para quem se encontra com alguma dificuldade de engajar na psicoterapia no momento, mas deseja um suporte qualificado.</p>
+              </div>
             </div>
           </div>
 
@@ -591,7 +623,9 @@
               <span class="acordeao__icone" aria-hidden="true"></span>
             </button></h4>
             <div class="acordeao__painel" id="faq-7" role="region" aria-labelledby="faq-7-btn" hidden>
-              <p data-i18n="faq.a7">Na modalidade de psicoterapia breve ofereço também a possibilidade de sessão única: um espaço de escuta imediata para momentos em que você precisa de um acolhimento rápido, sem compromisso de continuidade, como um plantão psicológico com a mesma profundidade, seriedade, escuta e compromisso ético que guiam minha prática.</p>
+              <div class="acordeao__conteudo">
+                <p data-i18n="faq.a7">Na modalidade de psicoterapia breve ofereço também a possibilidade de sessão única: um espaço de escuta imediata para momentos em que você precisa de um acolhimento rápido, sem compromisso de continuidade, como um plantão psicológico com a mesma profundidade, seriedade, escuta e compromisso ético que guiam minha prática.</p>
+              </div>
             </div>
           </div>
 
@@ -601,7 +635,9 @@
               <span class="acordeao__icone" aria-hidden="true"></span>
             </button></h4>
             <div class="acordeao__painel" id="faq-8" role="region" aria-labelledby="faq-8-btn" hidden>
-              <p data-i18n="faq.a8">O atendimento online é realizado por videochamada e pode ser uma alternativa para pessoas que estão em diferentes cidades do Brasil, para brasileiros residentes no exterior e para estrangeiros, observadas as condições aplicáveis à modalidade.</p>
+              <div class="acordeao__conteudo">
+                <p data-i18n="faq.a8">O atendimento online é realizado por videochamada e pode ser uma alternativa para pessoas que estão em diferentes cidades do Brasil, para brasileiros residentes no exterior e para estrangeiros, observadas as condições aplicáveis à modalidade.</p>
+              </div>
             </div>
           </div>
 
@@ -611,7 +647,9 @@
               <span class="acordeao__icone" aria-hidden="true"></span>
             </button></h4>
             <div class="acordeao__painel" id="faq-9" role="region" aria-labelledby="faq-9-btn" hidden>
-              <p data-i18n="faq.a9">Há atendimento online para brasileiros residentes no exterior e para nativos falantes de inglês. Entre em contato para verificar as condições de atendimento para sua localização.</p>
+              <div class="acordeao__conteudo">
+                <p data-i18n="faq.a9">Há atendimento online para brasileiros residentes no exterior e para nativos falantes de inglês. Entre em contato para verificar as condições de atendimento para sua localização.</p>
+              </div>
             </div>
           </div>
 
@@ -628,8 +666,10 @@
               <span class="acordeao__icone" aria-hidden="true"></span>
             </button></h4>
             <div class="acordeao__painel" id="faq-10" role="region" aria-labelledby="faq-10-btn" hidden>
-              <p data-i18n="faq.a10a">Parte de uma investigação de aspectos emocionais, cognitivos e relacionais — seja como parte de um processo terapêutico ou para esclarecimento diagnóstico. O processo inclui entrevistas, observação e, quando necessário, a aplicação de instrumentos disponíveis dentro da minha formação.</p>
-              <p data-i18n="faq.a10b">Após a análise, entrego um documento com considerações e encaminhamentos, sempre de forma ética, transparente e em conformidade com a Resolução CFP nº 09/2018.</p>
+              <div class="acordeao__conteudo">
+                <p data-i18n="faq.a10a">Parte de uma investigação de aspectos emocionais, cognitivos e relacionais — seja como parte de um processo terapêutico ou para esclarecimento diagnóstico. O processo inclui entrevistas, observação e, quando necessário, a aplicação de instrumentos disponíveis dentro da minha formação.</p>
+                <p data-i18n="faq.a10b">Após a análise, entrego um documento com considerações e encaminhamentos, sempre de forma ética, transparente e em conformidade com a Resolução CFP nº 09/2018.</p>
+              </div>
             </div>
           </div>
 
@@ -639,7 +679,9 @@
               <span class="acordeao__icone" aria-hidden="true"></span>
             </button></h4>
             <div class="acordeao__painel" id="faq-11" role="region" aria-labelledby="faq-11-btn" hidden>
-              <p data-i18n="faq.a11">Atendo crianças e adolescentes encaminhados pela escola ou pela família, compreendendo o jeito único de aprender e identificando barreiras e potencialidades para auxiliar na construção de estratégias pedagógicas e emocionais.</p>
+              <div class="acordeao__conteudo">
+                <p data-i18n="faq.a11">Atendo crianças e adolescentes encaminhados pela escola ou pela família, compreendendo o jeito único de aprender e identificando barreiras e potencialidades para auxiliar na construção de estratégias pedagógicas e emocionais.</p>
+              </div>
             </div>
           </div>
 
@@ -649,7 +691,9 @@
               <span class="acordeao__icone" aria-hidden="true"></span>
             </button></h4>
             <div class="acordeao__painel" id="faq-12" role="region" aria-labelledby="faq-12-btn" hidden>
-              <p data-i18n="faq.a12">Essa modalidade é oferecida para jovens e adultos em dúvida sobre qual caminho seguir, ajudando a iluminar interesses, habilidades e valores pessoais.</p>
+              <div class="acordeao__conteudo">
+                <p data-i18n="faq.a12">Essa modalidade é oferecida para jovens e adultos em dúvida sobre qual caminho seguir, ajudando a iluminar interesses, habilidades e valores pessoais.</p>
+              </div>
             </div>
           </div>
 
@@ -659,7 +703,9 @@
               <span class="acordeao__icone" aria-hidden="true"></span>
             </button></h4>
             <div class="acordeao__painel" id="faq-13" role="region" aria-labelledby="faq-13-btn" hidden>
-              <p data-i18n="faq.a13">A duração varia conforme a finalidade e as características de cada avaliação. No primeiro contato, é possível explicar como funciona o processo específico que você procura.</p>
+              <div class="acordeao__conteudo">
+                <p data-i18n="faq.a13">A duração varia conforme a finalidade e as características de cada avaliação. No primeiro contato, é possível explicar como funciona o processo específico que você procura.</p>
+              </div>
             </div>
           </div>
 
@@ -673,7 +719,10 @@
 <!-- =============================== CTA FINAL ============================ -->
 <section class="secao secao--vermelho final" id="contato">
   <div class="textura textura--creme" aria-hidden="true"></div>
-  <img class="coracao coracao--fundo coracao--centro" src="assets/coracao-creme.png" alt="" width="832" height="1072" loading="lazy" decoding="async">
+  <picture>
+    <source type="image/webp" srcset="assets/coracao-creme.webp">
+    <img class="coracao coracao--fundo coracao--centro" src="assets/coracao-creme.png" alt="" width="832" height="1072" loading="lazy" decoding="async">
+  </picture>
 
   <div class="interno centralizado">
     <h2 class="titulo-editorial reveal" data-i18n="final.titulo">Talvez o primeiro passo seja conversar.</h2>
@@ -699,7 +748,10 @@
   <div class="interno rodape__grade">
 
     <div class="rodape__marca">
-      <img class="rodape__simbolo" src="assets/coracao-creme.png" alt="" width="832" height="1072" loading="lazy" decoding="async">
+      <picture>
+        <source type="image/webp" srcset="assets/coracao-creme.webp">
+        <img class="rodape__simbolo" src="assets/coracao-creme.png" alt="" width="832" height="1072" loading="lazy" decoding="async">
+      </picture>
       <p class="rodape__nome">Isabella de Luna</p>
       <p class="rodape__papel" data-i18n-html="rodape.papel">Psicóloga <span aria-hidden="true">·</span> CRP 02/29244</p>
     </div>
@@ -774,7 +826,7 @@
   <symbol id="zap" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.13-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.53.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.41-.56-.42h-.47c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.22-.17-.47-.29Z"/></symbol>
 </svg>
 
-<script src="script.js?v=6" defer></script>
+<script src="script.js?v=7" defer></script>
 <script src="i18n.js?v=7" defer></script>
 <!-- Vercel Web Analytics: sem cookies, medicao agregada. O script vem do
      proprio dominio (/_vercel/insights), entao nao ha terceiro envolvido.

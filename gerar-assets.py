@@ -76,3 +76,30 @@ for tam in (180, 32):
     nome = "favicon.png" if tam == 32 else "apple-touch-icon.png"
     fundo.save(os.path.join(A, nome), optimize=True)
     print("  ->", nome, fundo.size)
+
+# ----------------------------------------------------------------- 5. WEBP
+# O site entrega WebP e guarda o PNG/JPEG como alternativa (<picture> no HTML,
+# image-set() no CSS). Estes arquivos precisam acompanhar os de cima, senao o
+# site passa a servir uma versao velha para quase todo mundo.
+#
+# Marca e linhas vao sem perda: sao silhuetas de cor chapada, a informacao toda
+# esta no canal alpha e qualidade lossy nao muda um byte sequer do resultado.
+# A foto vai em qualidade 85, que ficou 35% menor que o JPEG com diferenca
+# media de 2,3 niveis por canal (RMSE) — invisivel a olho nu num retrato.
+print("\nWebP:")
+for nome in ("coracao-creme.png", "coracao-vermelho.png",
+             "linhas-creme.png", "linhas-vermelho.png"):
+    origem = os.path.join(A, nome)
+    destino = origem[:-4] + ".webp"
+    Image.open(origem).save(destino, "WEBP", lossless=True, method=6)
+    print("  ->", os.path.basename(destino),
+          os.path.getsize(origem) // 1024, "KB ->",
+          os.path.getsize(destino) // 1024, "KB")
+
+for nome in ("isabella.jpg", "isabella-small.jpg"):
+    origem = os.path.join(A, nome)
+    destino = origem[:-4] + ".webp"
+    Image.open(origem).save(destino, "WEBP", quality=85, method=6)
+    print("  ->", os.path.basename(destino),
+          os.path.getsize(origem) // 1024, "KB ->",
+          os.path.getsize(destino) // 1024, "KB")

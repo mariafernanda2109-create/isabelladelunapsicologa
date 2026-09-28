@@ -123,7 +123,9 @@ assets/
   linhas-creme.png            padrão de linhas recortado, tom claro
   linhas-vermelho.png         padrão de linhas recortado, tom vermelho
   linhas-claro.png            variação off-white
-  isabella.jpg                foto (1200px) + isabella-small.jpg (420px)
+  isabella.jpg                foto (525px) + isabella-small.jpg (420px)
+  *.webp                      a versão que o site realmente entrega (ver abaixo)
+  og-image.png                cartão de compartilhamento 1200x630
   favicon.png / apple-touch-icon.png
   originais/                  os JPEGs originais da identidade e a foto sem tratamento
 ```
@@ -141,6 +143,23 @@ python gerar-assets.py
 ```
 
 Requer `Pillow` e `numpy` (`pip install Pillow numpy`).
+
+**WebP.** Cada imagem existe em dois arquivos: o WebP, que é o que quase todo navegador
+baixa, e o PNG ou JPEG de mesmo nome, que fica como alternativa para quem não suporta o
+formato. No HTML isso está escrito como `<picture>`; no CSS, como `image-set()`. Somando
+a página inicial, são 371 KB em PNG/JPEG contra 183 KB em WebP — 51% menos.
+
+Quem escolhe é o navegador, não o site, então nada quebra em quem ficar no arquivo antigo.
+Os dois formatos precisam andar juntos: `gerar-assets.py` regera os dois de uma vez, e o
+`og-image.png` continua em PNG de propósito, porque validador de rede social lida mal com
+WebP.
+
+A marca e o padrão de linhas vão em WebP sem perda. São silhuetas de cor chapada: a
+informação toda está no canal alpha, e qualidade lossy não muda um byte do resultado
+(`quality=82` e `quality=90` geram arquivos idênticos). A foto vai em qualidade 85.
+
+AVIF foi medido e descartado: ganhou menos de 2% sobre o WebP nessas imagens, o que não
+paga um terceiro arquivo por imagem.
 
 ---
 
