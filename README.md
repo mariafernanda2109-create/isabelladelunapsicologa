@@ -243,7 +243,8 @@ ficam como estão, por precisão postal.
 - Alvos de toque a partir de 52px na barra fixa e 62px nos itens do menu.
 - `prefers-reduced-motion` desliga todas as animações.
 - Sem JavaScript, nada fica escondido: as respostas do FAQ aparecem abertas.
-- Zero dependências externas além das fontes do Google. Imagens com `width`/`height`
+- Zero dependências externas: as fontes (DM Serif Display e Manrope) ficam em
+  `assets/fontes/`, com pré-carregamento das duas da primeira dobra. Imagens com `width`/`height`
   declarados (sem deslocamento de layout), `loading="lazy"` fora da primeira dobra e
   `srcset` na foto.
 - Sem rolagem horizontal — verificado de 360px a 1920px.

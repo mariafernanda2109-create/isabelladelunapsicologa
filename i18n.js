@@ -23,8 +23,8 @@ const I18N = {
   /* =================================================================== */
   pt: {
     /* --- metadados ------------------------------------------------- */
-    "meta.titulo": "Isabella de Luna | Psicóloga | Psicoterapia e Avaliação Psicológica",
-    "meta.descricao": "Psicoterapia, psicoterapia breve e avaliação psicológica em Recife (PE) e online — em português e inglês — para o Brasil, para brasileiros no exterior e para estrangeiros.",
+    "meta.titulo": "Isabella de Luna | Psicóloga em Recife e Online",
+    "meta.descricao": "Psicóloga em Recife (PE): psicoterapia, psicoterapia breve e avaliação psicológica, presencial e online, em português e inglês, no Brasil e no exterior.",
     "meta.tituloPolitica": "Política de Privacidade | Isabella de Luna",
     "meta.descricaoPolitica": "Política de Privacidade do site de Isabella de Luna, psicóloga.",
     "meta.tituloTermos": "Termos de Uso | Isabella de Luna",
@@ -268,8 +268,8 @@ const I18N = {
   /* =================================================================== */
   en: {
     /* --- metadata --------------------------------------------------- */
-    "meta.titulo": "Isabella de Luna | Psychologist | Therapy and Psychological Assessment",
-    "meta.descricao": "Therapy, short-term therapy and psychological assessment in Recife, Brazil and online — in English and Portuguese — for Brazilians abroad and for English speakers.",
+    "meta.titulo": "Isabella de Luna | Psychologist in Recife, Brazil and Online",
+    "meta.descricao": "Psychologist in Recife, Brazil: therapy, short-term therapy and psychological assessment, in person and online, in English and Portuguese, worldwide.",
     "meta.tituloPolitica": "Privacy Policy | Isabella de Luna",
     "meta.descricaoPolitica": "Privacy Policy for the website of Isabella de Luna, psychologist.",
     "meta.tituloTermos": "Terms of Use | Isabella de Luna",
