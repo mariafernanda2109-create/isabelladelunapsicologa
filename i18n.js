@@ -48,9 +48,9 @@ const I18N = {
     "idioma.en": "Inglês",
 
     /* --- hero ------------------------------------------------------ */
-    "hero.rotulo": "Psicoterapia <span aria-hidden=\"true\">•</span> Psicoterapia breve <span aria-hidden=\"true\">•</span> Avaliação psicológica",
+    "hero.rotulo": "Psicóloga em Recife <span aria-hidden=\"true\">•</span> Presencial e online",
     "hero.titulo": "Criando espaços onde pessoas <em>não precisem fingir.</em>",
-    "hero.sub": "Psicoterapia, avaliação psicológica e psicoterapia breve com escuta, cuidado e um olhar individual para cada história.",
+    "hero.sub": "Psicoterapia, psicoterapia breve e avaliação psicológica em Recife e online, com escuta, cuidado e um olhar individual para cada história.",
     "hero.cta": "Conversar pelo WhatsApp <span class=\"seta\" aria-hidden=\"true\">→</span>",
     "hero.alt": "Símbolo da marca Isabella de Luna: um coração anatômico atravessado por linhas contínuas.",
 
@@ -59,10 +59,10 @@ const I18N = {
     "conceito.texto": "Vamos criar, juntos, mais uma possibilidade de existência para você.",
 
     /* --- sobre ----------------------------------------------------- */
-    "sobre.alt": "Retrato de Isabella de Luna, psicóloga.",
+    "sobre.alt": "Retrato de Isabella de Luna, psicóloga em Recife.",
     "sobre.rotulo": "Sobre mim",
     "sobre.titulo": "Olá, me chamo Isabella de Luna.",
-    "sobre.p1": "Sou psicóloga clínica e educacional formada pelo Centro Universitário UniFAFIRE, especialista em avaliação psicológica e ofereço atendimentos para adultos, adolescentes e crianças a partir dos 3 anos de idade.",
+    "sobre.p1": "Sou psicóloga clínica e educacional em Recife, formada pelo Centro Universitário UniFAFIRE e especialista em avaliação psicológica. Atendo adultos, adolescentes e crianças a partir dos 3 anos de idade, no consultório e online.",
     "sobre.p2": "Sigo a abordagem da Gestalt-terapia, que me permite olhar para cada pessoa de forma singular e trazer o foco para o que ocorre no hoje, aqui e agora.",
     "sobre.p3": "Estar atenta aos impactos sociais é um compromisso indispensável ao meu fazer. Por isso, o aprofundamento nas temáticas raciais e na vivência da comunidade LGBTQIAP+ é uma das bases da minha clínica.",
     "sobre.cta": "Conhecer meu trabalho <span class=\"seta\" aria-hidden=\"true\">→</span>",
@@ -86,8 +86,8 @@ const I18N = {
     "modalidades.rotulo": "Modalidades",
     "modalidades.titulo": "De onde você estiver.",
     "presencial.rotulo": "Presencial",
-    "presencial.titulo": "Um espaço reservado para você.",
-    "presencial.texto": "Atendimento presencial em Recife (PE), em um espaço pensado para oferecer privacidade, acolhimento e tranquilidade.",
+    "presencial.titulo": "Um consultório em Recife reservado para você.",
+    "presencial.texto": "Atendimento presencial na Boa Vista, no centro do Recife, em um consultório pensado para oferecer privacidade, acolhimento e tranquilidade.",
     "presencial.endereco": "<span class=\"endereco__predio\">Edifício Ambassador</span>\n      Rua José de Alencar, 44A &mdash; Sala 53<br>\n      Boa Vista, Recife (PE) &middot; CEP 50070-030",
     "presencial.mapa": "Ver no mapa <span class=\"seta\" aria-hidden=\"true\">→</span>",
     "online.rotulo": "Online",
@@ -106,8 +106,8 @@ const I18N = {
     "dif2.texto": "Um espaço profissional para falar sobre o que está sendo vivido com liberdade e respeito.",
     "dif3.titulo": "Diferentes possibilidades de atendimento",
     "dif3.texto": "Psicoterapia, psicoterapia breve e avaliação psicológica, de acordo com a necessidade.",
-    "dif4.titulo": "Presencial ou online",
-    "dif4.texto": "Flexibilidade para realizar o atendimento de acordo com sua localização e a modalidade adequada.",
+    "dif4.titulo": "Presencial em Recife ou online",
+    "dif4.texto": "Flexibilidade para escolher entre o consultório em Recife e as sessões por videochamada, de acordo com a sua rotina e o seu momento.",
 
     /* --- como funciona --------------------------------------------- */
     "etapas.rotulo": "Como funciona",
@@ -148,6 +148,10 @@ const I18N = {
     "faq.a4": "A frequência é definida considerando a demanda, os objetivos do acompanhamento e a avaliação profissional.",
     "faq.q5": "Como faço para agendar?",
     "faq.a5": "Clique no botão de WhatsApp e envie uma mensagem. Você receberá as informações sobre disponibilidade, modalidade e próximos passos.",
+    "faq.q14": "Onde fica o consultório em Recife?",
+    "faq.a14": "No Edifício Ambassador, na Rua José de Alencar, 44A, sala 53, bairro da Boa Vista, no centro do Recife. Se você mora em outra cidade ou prefere não se deslocar, o atendimento também pode ser online.",
+    "faq.q15": "Você atende crianças e adolescentes?",
+    "faq.a15": "Sim. Atendo crianças a partir dos 3 anos, adolescentes e adultos. Entre em contato para conversarmos sobre a demanda e sobre como o atendimento pode funcionar para a idade de quem será atendido.",
 
     "faq.q6": "Como funciona a psicoterapia breve?",
     "faq.a6a": "Diferente do acompanhamento tradicional, ela parte de uma queixa específica e trabalha para que você possa compreendê-la, ressignificá-la e encontrar novos caminhos.",
@@ -171,7 +175,7 @@ const I18N = {
 
     /* --- CTA final --------------------------------------------------- */
     "final.titulo": "Talvez o primeiro passo seja conversar.",
-    "final.texto": "Se você está considerando iniciar um acompanhamento psicológico, entre em contato para conhecer melhor o trabalho e tirar suas dúvidas.",
+    "final.texto": "Se você está considerando iniciar um acompanhamento psicológico em Recife ou online, entre em contato para conhecer melhor o trabalho e tirar suas dúvidas.",
     "final.cta": "Conversar pelo WhatsApp <span class=\"seta\" aria-hidden=\"true\">→</span>",
     "final.assinatura": "Isabella de Luna <span aria-hidden=\"true\">·</span> Psicóloga <span aria-hidden=\"true\">·</span> CRP 02/29244",
 
@@ -293,9 +297,9 @@ const I18N = {
     "idioma.en": "English",
 
     /* --- hero -------------------------------------------------------- */
-    "hero.rotulo": "Therapy <span aria-hidden=\"true\">•</span> Short-term therapy <span aria-hidden=\"true\">•</span> Psychological assessment",
+    "hero.rotulo": "Psychologist in Recife, Brazil <span aria-hidden=\"true\">•</span> In person and online",
     "hero.titulo": "Creating spaces where people <em>don't have to pretend.</em>",
-    "hero.sub": "Therapy, psychological assessment and short-term therapy — with real listening, care, and attention to your particular story.",
+    "hero.sub": "Therapy, short-term therapy and psychological assessment in Recife and online — with real listening, care, and attention to your particular story.",
     "hero.cta": "Message me on WhatsApp <span class=\"seta\" aria-hidden=\"true\">→</span>",
     "hero.alt": "Isabella de Luna's brand symbol: an anatomical heart crossed by continuous lines.",
 
@@ -304,10 +308,10 @@ const I18N = {
     "conceito.texto": "Together, we'll open up another way for you to exist.",
 
     /* --- about ------------------------------------------------------- */
-    "sobre.alt": "Portrait of Isabella de Luna, psychologist.",
+    "sobre.alt": "Portrait of Isabella de Luna, psychologist in Recife, Brazil.",
     "sobre.rotulo": "About me",
     "sobre.titulo": "Hi, I'm Isabella de Luna.",
-    "sobre.p1": "I'm a clinical and educational psychologist trained at Centro Universitário UniFAFIRE, with a specialization in psychological assessment. I work with adults, teenagers and children from age 3.",
+    "sobre.p1": "I'm a clinical and educational psychologist based in Recife, Brazil, trained at Centro Universitário UniFAFIRE, with a specialization in psychological assessment. I work with adults, teenagers and children from age 3, in person and online.",
     "sobre.p2": "I practice Gestalt therapy, which lets me meet each person as an individual and keep the focus on what's happening right now, here and today.",
     "sobre.p3": "Paying attention to social context is essential to how I practice. Deep engagement with race and with LGBTQIAP+ lived experience is one of the foundations of my clinical work.",
     "sobre.cta": "Learn about my work <span class=\"seta\" aria-hidden=\"true\">→</span>",
@@ -331,8 +335,8 @@ const I18N = {
     "modalidades.rotulo": "Formats",
     "modalidades.titulo": "From wherever you are.",
     "presencial.rotulo": "In person",
-    "presencial.titulo": "A space kept just for you.",
-    "presencial.texto": "In-person sessions in Recife, Brazil, in a space designed for privacy, warmth and calm.",
+    "presencial.titulo": "An office in Recife kept just for you.",
+    "presencial.texto": "In-person sessions in Boa Vista, in central Recife, Brazil, in an office designed for privacy, warmth and calm.",
     "presencial.endereco": "<span class=\"endereco__predio\">Edifício Ambassador</span>\n      Rua José de Alencar, 44A &mdash; Suite 53<br>\n      Boa Vista, Recife (PE) &middot; ZIP 50070-030",
     "presencial.mapa": "View on map <span class=\"seta\" aria-hidden=\"true\">→</span>",
     "online.rotulo": "Online",
@@ -351,8 +355,8 @@ const I18N = {
     "dif2.texto": "A professional space to talk about what you're living through, freely and with respect.",
     "dif3.titulo": "More than one way in",
     "dif3.texto": "Therapy, short-term therapy or psychological assessment, depending on what you need.",
-    "dif4.titulo": "In person or online",
-    "dif4.texto": "Flexibility to meet in the format and location that work for you.",
+    "dif4.titulo": "In person in Recife or online",
+    "dif4.texto": "Flexibility to choose between the office in Recife and video sessions, depending on your routine and where you are in life.",
 
     /* --- how it works ------------------------------------------------ */
     "etapas.rotulo": "How it works",
@@ -393,6 +397,10 @@ const I18N = {
     "faq.a4": "Frequency is set based on what brought you here, the goals of the work and my professional assessment.",
     "faq.q5": "How do I book?",
     "faq.a5": "Tap the WhatsApp button and send a message. You'll get details on availability, formats and next steps.",
+    "faq.q14": "Where is the office in Recife?",
+    "faq.a14": "At Edifício Ambassador, Rua José de Alencar, 44A, Suite 53, in the Boa Vista neighborhood of central Recife. If you live elsewhere or would rather not travel, sessions can also be online.",
+    "faq.q15": "Do you work with children and teenagers?",
+    "faq.a15": "Yes. I work with children from age 3, teenagers and adults. Get in touch so we can talk about what's going on and how sessions can work for the age of the person who'll be seen.",
 
     "faq.q6": "How does short-term therapy work?",
     "faq.a6a": "Unlike ongoing therapy, it starts from one specific concern and works so you can understand it, reframe it and find new paths.",
@@ -416,7 +424,7 @@ const I18N = {
 
     /* --- final CTA ----------------------------------------------------- */
     "final.titulo": "Maybe the first step is just talking.",
-    "final.texto": "If you're considering starting therapy, get in touch to learn more about the work and ask your questions.",
+    "final.texto": "If you're considering starting therapy, in Recife or online, get in touch to learn more about the work and ask your questions.",
     "final.cta": "Message me on WhatsApp <span class=\"seta\" aria-hidden=\"true\">→</span>",
     "final.assinatura": "Isabella de Luna <span aria-hidden=\"true\">·</span> Psychologist <span aria-hidden=\"true\">·</span> CRP 02/29244",
 
