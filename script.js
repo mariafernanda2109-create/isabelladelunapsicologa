@@ -222,6 +222,35 @@ const CONFIG = {
     });
   }
 
+  /* ---------------------------------------------------- abertura */
+
+  /* A abertura sai quando as fontes estão prontas e passou o tempo mínimo
+     da animação da logo, ou antes, se a pessoa clicar ou apertar uma tecla.
+     O teto de 4 s cobre fonte que demora a chegar. */
+  const raiz = document.documentElement;
+  const intro = $(".intro");
+  if (intro && raiz.classList.contains("is-intro")) {
+    const reduzir = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo(0, 0);
+    let saiu = false;
+    const sair = () => {
+      if (saiu) return;
+      saiu = true;
+      intro.classList.add("saindo");
+      raiz.classList.remove("is-intro");
+      setTimeout(() => intro.remove(), 1200);
+    };
+    Promise.all([
+      document.fonts ? document.fonts.ready : null,
+      new Promise((ok) => setTimeout(ok, reduzir ? 300 : 1000))
+    ]).then(sair);
+    setTimeout(sair, 4000);
+    intro.addEventListener("click", sair);
+    window.addEventListener("keydown", sair, { once: true });
+  } else if (intro) {
+    intro.remove();
+  }
+
   /* ------------------------------------------ revelação no scroll */
 
   const alvos = $$(".reveal, .etapas__lista");

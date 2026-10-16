@@ -1356,6 +1356,77 @@ body::after {
 
 .reveal--marca { transform: translateY(1.625rem) scale(.965); }
 
+/* ----------------------------------------------------------- ABERTURA -- */
+/* A logo aparece em três tempos (coração, nome, papel) sobre o creme e,
+   quando o site está pronto, a tela sobe como uma cortina e revela o
+   topo vermelho. Só existe com html.is-intro, que o <head> liga. */
+html.is-intro { overflow: hidden; }
+
+.intro { display: none; }
+html.is-intro .intro,
+.intro.saindo {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  place-items: center;
+  background: var(--creme);
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 1.1s cubic-bezier(.76, 0, .24, 1);
+}
+.intro__palco {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  transition: transform 1.1s cubic-bezier(.76, 0, .24, 1), opacity .6s var(--suave);
+}
+.intro__coracao,
+.intro__nome,
+.intro__papel {
+  opacity: 0;
+  animation: intro-surge .7s var(--suave) forwards;
+}
+.intro__coracao {
+  width: clamp(4.25rem, 13vw, 5.75rem);
+  height: auto;
+  animation-delay: .05s;
+}
+.intro__nome {
+  margin-top: 1.375rem;
+  font-family: var(--serif);
+  font-size: clamp(1.875rem, 1.45rem + 1.8vw, 2.5rem);
+  line-height: 1;
+  letter-spacing: -.005em;
+  color: var(--vermelho);
+  animation-delay: .15s;
+}
+.intro__papel {
+  margin-top: .75rem;
+  padding-left: .3em; /* compensa o tracking da última letra e centraliza */
+  font-size: .6875rem;
+  font-weight: 600;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--vinho);
+  animation-delay: .25s;
+}
+.intro.saindo { clip-path: inset(0 0 100% 0); }
+.intro.saindo .intro__palco { transform: translateY(-8vh); opacity: 0; }
+
+@keyframes intro-surge {
+  from { opacity: 0; transform: translateY(.875rem); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* O topo espera a cortina subir para fazer a própria entrada, em vez de
+   animar escondido atrás dela. */
+html.is-intro .hero .reveal {
+  opacity: 0;
+  transform: translateY(1.375rem);
+  transition: none;
+}
+html.is-intro .hero .reveal--marca { transform: translateY(1.625rem) scale(.965); }
+
 /* =====================================================================
    RESPONSIVO
    ===================================================================== */
@@ -1555,5 +1626,7 @@ body::after {
   }
   .reveal { opacity: 1; transform: none; }
   .etapas__lista::before { transform: none; }
+  .intro__coracao, .intro__nome, .intro__papel { opacity: 1; }
+  .intro.saindo { clip-path: none; opacity: 0; }
   .coracao--hero { animation: none; }
 }
